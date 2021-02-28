@@ -1,0 +1,25 @@
+mixin partners-list(partnersData, additionalClasses, withArrows)
+  ul.partners-list(class=(additionalClasses) ? additionalClasses : "")
+    each item in partnersData
+      li.partners-list__item(data-title=item.title, data-x-coordinate=item.xCoordinate, data-y-coordinate=item.yCoordinate)
+        .partners-list__article
+          .partners-list__main-info
+            h2=item.title
+            address!=item.address
+          if item.moreDetails
+            .partners-list__more-details
+              .partners-list__logo-wrapper
+                if item.moreDetails.logo
+                  img(src=item.moreDetails.logo, width=124, height=34, alt=`логотип ${item.title}`)
+              if item.moreDetails.contacts
+                .partners-list__contacts
+                  h3 Контакты
+                  if item.moreDetails.contacts.phone
+                    a(href=`tel:${item.moreDetails.contacts.phone.replace(/\s+|\(|\)|-/g, '')}`) #[span #[+icon("icon-phone", 8, 9)]] #{item.moreDetails.contacts.phone}
+                  if item.moreDetails.contacts.email
+                    a(href=`mailto:${item.moreDetails.contacts.email.replace(/\s+/g, '')}`) #[span #[+icon("icon-mail", 10, 7)]] #{item.moreDetails.contacts.email}
+              address!=item.address
+              button.partners-list__more-details-back.btn-reset(type="button", name="назад") назад
+        if withArrows
+          button.partners-list__arrow-button.btn-reset(type="button", name="подробнее")
+            +icon("partners-arrow", 14, 25)(class="partners-list__arrow-icon")

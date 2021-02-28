@@ -1,0 +1,49 @@
+extends ../base/layout
+
+include ../mixins/basic/picture
+include ../components/product
+
+block data
+  -
+    const product = {
+      imageName: "spaceless-be-line-disc-brushes",
+      imageWidth: "718",
+      imageHeight: "675",
+      imageAlt: "дисковые щетки",
+      title: "Беспроставочные дисковые щетки из полипропилена гнутого профиля типа «Би-лайн»",
+      description: [
+        "идеальны для удаления пыли и мелкого мусора с дорожного покрытия в летний период. Он имеют специально разработанную изогнутую «объёмную» форму. Когда эти диски набираются на вал, то образуют конструкцию в виде пчелиных сот. Благодаря этому при вращении вала достигается эффект сплошной подметающей поверхности фронтальной щётки, без промежутков."
+      ],
+      list: [
+        {
+          title: "Материал ворса",
+          elements: [
+            "полипропилен диаметром 2,3-2,5 мм."
+          ]
+        }
+      ],
+      details: [
+        {feature: "Внутренний диаметр кольца", value: "110 мм, 120 мм, 127 мм, 164 мм, 180 мм, 220 мм, 254 мм, 280 мм."},
+        {feature: "Наружный диаметр ворса", value: "300-900 мм"}
+      ]
+    }
+
+block variables
+  - var title = "Беспроставочные дисковые щетки из полипропилена гнутого профиля типа «Би-лайн»"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    section.product.product--sub
+      .container.container--no-padding
+        +product(product)
+
+
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")

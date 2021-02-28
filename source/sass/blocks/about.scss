@@ -1,0 +1,143 @@
+.about {
+  position: relative;
+  z-index: 10;
+  background-color: $color-default-white;
+}
+
+.about__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 59px;
+
+  @include viewport--sm {
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 27px;
+  }
+}
+
+.about__description {
+  width: 37%;
+  margin-left: 84px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  color: $color-zambezi;
+
+  @include viewport--md {
+    width: 45%;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include viewport--sm {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 65px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.about__description-title {
+  margin: 0 0 37px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-eclipse;
+
+  @include viewport--sm {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.about__description p {
+  margin: 0 0 10px;
+}
+
+.about__description p:not(:first-of-type) {
+  @include viewport--sm {
+    display: none;
+  }
+}
+
+.about__advantages {
+  width: 53%;
+  margin-right: -28px;
+
+  @include viewport--md {
+    width: 55%;
+    margin-right: 0;
+  }
+
+  @include viewport--sm {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+.about__advantages-title {
+  margin: 0 0 32px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-myrtle;
+
+  @include viewport--sm {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.about__advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about__advantages-item {
+  width: 33.3%;
+
+  @include viewport--sm {
+    max-width: 145px;
+  }
+}

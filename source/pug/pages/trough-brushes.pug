@@ -1,0 +1,54 @@
+extends ../base/layout
+
+include ../mixins/basic/picture
+include ../components/product
+
+block data
+  -
+    const product = {
+      imageName: "trough-brushes",
+      imageWidth: "718",
+      imageHeight: "675",
+      imageAlt: "Лотковые щетки",
+      title: "Лотковые щетки",
+      description: [
+        "Предназначены для удаления загрязнений и наледи из труднодоступных мест по краям дорожного полотна, вдоль бордюров, в местах установки ограждений."
+      ],
+      list: [
+        {
+          title: "Материал основания",
+          elements: [
+            "Пластик 20 мм,",
+            "Водостойкая фанера 24 мм."
+          ]
+        },
+        {
+          title: "Материал набивки",
+          elements: [
+            "Полипропиленовый ворс диаметром 2,3-2,5 мм различной длины,",
+            "Стальной подкат 3 мм различной длины."
+          ]
+        }
+      ],
+      individual: "true"
+    }
+
+block variables
+  - var title = "Лотковые щетки"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    section.product
+      .container.container--no-padding
+        +product(product)
+
+
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")

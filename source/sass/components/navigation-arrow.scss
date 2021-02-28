@@ -1,0 +1,49 @@
+.navigation-arrow {
+  margin-right: 28px;
+  background-color: $color-myrtle;
+  border: none;
+  border-radius: 100px;
+  padding: 1px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
+
+  @include viewport--sm {
+    margin-right: 14px;
+  }
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  .navigation-arrow__wrapper {
+    position: relative;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background: $color-white-smoke;
+    border-radius: 99px;
+    outline: none;
+    fill: $color-default-white;
+
+    @include viewport--sm {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -50%);
+
+    @include viewport--sm {
+      width: 3px;
+      height: 6px;
+    }
+  }
+}
+

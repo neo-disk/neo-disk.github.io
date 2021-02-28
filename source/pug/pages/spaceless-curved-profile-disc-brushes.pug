@@ -1,0 +1,50 @@
+extends ../base/layout
+
+include ../mixins/basic/picture
+include ../components/product
+
+block data
+  -
+    const product = {
+      imageName: "spaceless-curved-disc-brushes",
+      imageWidth: "718",
+      imageHeight: "675",
+      imageAlt: "дисковые щетки",
+      title: "Беспроставочные дисковые щетки из полипропилена или металла гнутого профиля с обжимным металлическим кольцом",
+      description: [
+        "Благодаря гнутому профилю, ворс распределен по валу уборочной машины более равномерно, что значительно повышает качество уборки."
+      ],
+      list: [
+        {
+          title: "Материал ворса",
+          elements: [
+            "Полипропилен диаметром 2,3-2,5 мм,",
+            "Черная или оцинкованная металлическая проволока диаметром 0,45 мм."
+          ]
+        }
+      ],
+      details: [
+        {feature: "Внутренний диаметр кольца", value: "164 мм, 180 мм, 220 мм, 254 мм"},
+        {feature: "Наружный диаметр ворса", value: "300-900 мм"}
+      ]
+    }
+
+block variables
+  - var title = "Беспроставочные дисковые щетки из полипропилена или металла гнутого профиля с обжимным металлическим кольцом"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    section.product.product--sub
+      .container.container--no-padding
+        +product(product)
+
+
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")

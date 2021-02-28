@@ -1,0 +1,9 @@
+mixin picture(path, imageDesktop, imageMobile, format, width, height, alt)
+  picture
+    source(media="(max-width: 767px)", srcset= `img/${path}/${imageMobile}@1x.webp 1x, img/${path}/${imageMobile}@2x.webp 2x`, type="image/webp")
+
+    source(srcset= `img/${path}/${imageDesktop}@1x.webp 1x, img/${path}/${imageDesktop}@2x.webp 2x`, type="image/webp")
+
+    source(media="(max-width: 767px)", srcset= `img/${path}/${imageMobile}@1x.${format} 1x, img/${path}/${imageMobile}@2x.${format} 2x`)
+
+    img(src= `img/${path}/${imageDesktop}@1x.${format}`, srcset= `img/${path}/${imageDesktop}@2x.${format} 2x`, width= width, height= height, alt= alt)

@@ -1,0 +1,234 @@
+.product {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 145px;
+  background-color: $color-white-smoke;
+
+  @media (max-width: 900px) {
+    padding-bottom: 0;
+  }
+
+  @include viewport--sm {
+    padding-top: 9px;
+  }
+}
+
+.product__background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--backgroundProductWidth);
+  background-color: $color-wild-willow;
+
+  @media (max-width: 900px) {
+    width: var(--headerContactsProduct);
+    left: auto;
+    right: 0;
+  }
+
+  @include viewport--sm {
+    width: 47px;
+  }
+}
+
+.product__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+}
+
+.product__image {
+  position: relative;
+  max-width: 51.3%;
+  padding-top: 5px;
+  margin-right: 20px;
+  align-self: center;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.product__image img {
+  object-fit: cover;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.product__text {
+  position: relative;
+  z-index: 5;
+  max-width: 44.3%;
+  padding-right: 80px;
+  background-color: $color-white-smoke;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-default-black;
+
+  @include viewport--md {
+    padding-right: 40px;
+  }
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    padding-top: 24px;
+    padding-left: 40px;
+    padding-bottom: 80px;
+  }
+
+  @include viewport--sm {
+    padding-left: 23px;
+    padding-right: 23px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.product__text h1 {
+  margin: 0 0 28px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $color-default-black;
+
+  @include viewport--sm {
+    margin: 0 0 20px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.product--sub h1 {
+  font-size: 24px;
+  line-height: 29px;
+
+  @include viewport--sm {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.product__text p {
+  margin: 0 0 10px;
+}
+
+.product__text strong {
+  display: block;
+  margin: 0 0 10px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+
+  @include viewport--sm {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.product__text ul {
+  margin: 0 0 38px;
+  padding: 0;
+  list-style: none;
+}
+
+.product__text ul:last-child {
+  margin-bottom: 0;
+}
+
+.product__text li {
+  position: relative;
+  margin: 0 0 10px;
+  padding-left: 7px;
+
+  &::before {
+    position: absolute;
+    content: "-";
+    top: 0;
+    left: 0;
+  }
+}
+
+.product__text h2 {
+  margin: 54px 0 14px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: $color-default-black;
+
+  @include viewport--sm {
+    margin-top: 38px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.product__text table {
+  max-width: 511px;
+  min-width: 95%;
+  border-collapse: collapse;
+}
+
+.product__td {
+  width: 44.62%;
+  height: 55px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  border-top: 1px solid $color-dim-gray;
+  border-bottom: 1px solid $color-dim-gray;
+
+  @include viewport--sm {
+    width: 151px;
+    height: 37px;
+    font-size: 9px;
+    line-height: 11px;
+  }
+}
+
+.product__td--space {
+  width: 10.76%;
+  border: none;
+
+  @include viewport--sm {
+    width: 34px;
+  }
+}
+
+.product__td--value {
+  font-size: 10px;
+  line-height: 12px;
+
+  @include viewport--sm {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

@@ -1,0 +1,60 @@
+// Colors
+//---------------------------------
+// https://www.htmlcsscolor.com/hex/334482
+
+// Default
+
+$color-default-black:             #000000;
+$color-default-white:             #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$color-shadow:                    rgba(0, 0, 0, 0.25);
+$color-overlay:                   rgba(0, 0, 0, 0.24);
+$color-partners-border:           rgba(0, 0, 0, 0.13);
+$color-black:                     #0e0e0e;
+$color-white:                     #f2f2f2;
+$color-blue:                      #2c39f2;
+$color-fern-green:                #4f8439;
+$color-eclipse:                   #383838;
+$color-comet:                     #5f5f62;
+
+$color-whisper:                   #e5e5e5;
+$color-eclipse:                   #383838;
+$color-white-smoke:               #f4f4f4;
+$color-night-rider:               #333333;
+$color-zambezi:                   #5f5959;
+$color-myrtle:                    #185908;
+$color-wild-willow:               #b3d56d;
+$color-dim-gray:                  #6b6565;
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+//---------------------------------
+
+$font-family-proximanova:                     "Proxima Nova", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$default-transition-settings:       0.3s ease;
+$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                      320px;
+$viewport--md:                      768px;
+$viewport--lg:                      1024px;
+$viewport--xl:                      1440px;
+$viewport--xxl:                     1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

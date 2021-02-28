@@ -1,0 +1,49 @@
+extends ../base/layout
+
+include ../mixins/basic/picture
+include ../components/product
+
+block data
+  -
+    const product = {
+      imageName: "tupsy",
+      imageWidth: "718",
+      imageHeight: "675",
+      imageAlt: "Тупсы",
+      title: "Тупсы",
+      description: [
+        "Предназначены для замены наполнителя в многоразовых лотковых щетках для увеличения срока ее службы."
+      ],
+      list: [
+        {
+          title: "Материал рабочей части",
+          elements: [
+            "Полипропиленовый ворс диаметром 2,3-2,5 мм,",
+            "Стальной подкат 3 мм."
+          ]
+        }
+      ],
+      details: [
+        {feature: "Длина тупсы", value: "300-350 мм."}
+      ]
+    }
+
+block variables
+  - var title = "Тупсы"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    section.product
+      .container.container--no-padding
+        +product(product)
+
+
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")

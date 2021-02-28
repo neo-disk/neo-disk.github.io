@@ -1,0 +1,156 @@
+.promo {
+  position: relative;
+  background-color: $color-white-smoke;
+}
+
+.promo__background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: calc(var(--backgroundMainWidth) + 23px);
+  height: 100vh;
+  background-color: $color-wild-willow;
+
+  @include viewport--sm {
+    width: calc(var(--backgroundMainWidth) + 23px);
+  }
+}
+
+.promo__slide {
+  padding-top: 130px;
+  padding-bottom: 238px;
+
+  @include viewport--md {
+    padding-bottom: 160px;
+  }
+
+  @include viewport--sm {
+    padding-top: 27px;
+    padding-bottom: 58px;
+  }
+}
+
+.promo__slide-text {
+  position: relative;
+  z-index: 2;
+  width: 470px;
+  margin-left: 80px;
+
+  @include viewport--md {
+    margin-left: 0;
+  }
+}
+
+.promo__slide-text h1 {
+  margin: 0 0 30px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 88px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-eclipse;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include viewport--md {
+    margin-bottom: 14px;
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  @include viewport--sm {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.promo__slide-text p {
+  max-width: 450px;
+  margin: 0 0 10px;
+  font-family: $font-family-proximanova;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: $color-zambezi;
+
+  @include viewport--md {
+    max-width: 280px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include viewport--sm {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: normal;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 180px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.promo__slide-text--white h1,
+.promo__slide-text--white p {
+  color: $color-default-white;
+}
+
+.promo__slide img {
+  position: absolute;
+  top: 6.5%;
+  left: 53%;
+
+  @media (max-width: 1200px) {
+    left: 600px;
+  }
+
+  @include viewport--md {
+    top: 0;
+    left: 42%;
+  }
+
+  @include viewport--sm {
+    width: 150px;
+    height: auto;
+    left: auto;
+    right: 25px;
+  }
+}
+
+.promo__slide--full img {
+  top: auto;
+  bottom: 23.4%;
+  transform: none;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  @include viewport--sm {
+    bottom: 24.5%;
+  }
+}
+
+.promo__navigation {
+  position: absolute;
+  z-index: 10;
+  bottom: 59px;
+  left: calc(50% + 80px);
+  transform: translateX(-50%);
+
+  @include viewport--md {
+    left: 50%;
+    bottom: 28px;
+  }
+
+  @include viewport--sm {
+    bottom: 11px;
+  }
+}
