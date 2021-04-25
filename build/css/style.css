@@ -2894,7 +2894,7 @@ button,
   .partners__list .partners-list__item--active .partners-list__more-details {
     position: absolute;
     top: 50px;
-    left: 100%;
+    left: calc(100% + 50px);
     z-index: 100;
     width: auto;
     min-width: 279px;
