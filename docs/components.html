@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Лотковые щетки</title>
+    <title>Компоненты</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -178,35 +178,70 @@
           </div>
         </div>
       </header>
+      <style>
+        main > .container {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+
+        .components-backwards {
+          display: inline-block;
+          margin-bottom: 10px;
+          margin-left: 7px;
+        }
+
+        .components-backwards span:first-child {
+          position: relative;
+          top: -3px;
+
+          display: inline-block;
+          margin-right: 15px;
+
+          font-size: 16px;
+          line-height: 24px;
+          vertical-align: top;
+
+          transform: scale(2);
+        }
+
+        .components-backwards span:last-child {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .components-backwards + h1 {
+          margin-bottom: 0;
+        }
+
+        .container > section {
+          padding: 20px 0;
+        }
+
+      </style>
       <main>
-        <section class="product">
-          <div class="container container--no-padding">
-            <div class="product__background"></div>
-            <div class="product__wrapper">
-              <div class="product__image">
-                <picture>
-                  <source media="(max-width: 767px)" srcset="img/content/products/trough-brushes-sm@1x.webp 1x, img/content/products/trough-brushes-sm@2x.webp 2x" type="image/webp"/>
-                  <source srcset="img/content/products/trough-brushes@1x.webp 1x, img/content/products/trough-brushes@2x.webp 2x" type="image/webp"/>
-                  <source media="(max-width: 767px)" srcset="img/content/products/trough-brushes-sm@1x.png 1x, img/content/products/trough-brushes-sm@2x.png 2x"/><img src="img/content/products/trough-brushes@1x.png" srcset="img/content/products/trough-brushes@2x.png 2x" width="718" height="675" alt="Лотковые щетки"/>
-                </picture>
-              </div>
-              <div class="product__text">
-                <h1>Лотковые щетки</h1>
-                <p>Предназначены для удаления загрязнений и наледи из труднодоступных мест по краям дорожного полотна, вдоль бордюров, в местах установки ограждений.</p><strong>Материал основания</strong>
-                <ul>
-                  <li>Пластик 20 мм,</li>
-                  <li>Водостойкая фанера 24 мм.</li>
-                </ul><strong>Материал набивки</strong>
-                <ul>
-                  <li>Полипропиленовый ворс диаметром 2,3-2,5 мм различной длины,</li>
-                  <li>Стальной подкат 3 мм различной длины.</li>
-                </ul>
-                <h2>детали</h2>
-                <p><b>Изготавливается по индивидуальным размерам</b></p>
+        <div class="container"><a class="components-backwards" href="site-map.html"><span>&larr;</span><span>вернуться на разводящую</span></a>
+          <h1>Компоненты, используемые в вёрстке</h1>
+          <section>
+            <h2>Название компонента или группы компонентов</h2>
+            <p>Класс компонента \ модификаторы</p>
+            <p style="color: red;">При необходимости, подсказки \ предупреждение \ важная информация</p>
+            <div>Компонент</div>
+          </section>
+          <section>
+            <h2>Преимущество (иконка + текст)</h2>
+            <p>Используется на главной</p>
+            <div>
+              <div class="advantage">
+                <div class="advantage__icon-wrapper">
+                  <svg width="90" height="90" aria-hidden="true">
+                    <use xlink:href="#advantage-crude"></use>
+                  </svg>
+                </div>
+                <p class="advantage__text">Высококачественное сырье</p>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
       <footer class="footer">
         <div class="container">
@@ -226,7 +261,5 @@
         </div>
       </footer>
     </div>
-    <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script>
   </body>
 </html>
