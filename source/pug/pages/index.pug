@@ -1,113 +1,65 @@
 extends ../base/layout
 
+include ../mixins/basic/picture
+include ../components/promo-slider
+include ../components/navigation-arrow
+include ../components/advantage
+include ../components/product-card
+
+block data
+  include ../data/promo
+  include ../data/advantagesList
+  include ../data/productsList
+
 block variables
-  - var title = "Оглавление"
+  - var title = "НЭО ДИСК — Главная"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "index" //- для остальных страниц пишем либо пустую строку, либо индекс
 
 block main
-  style.
-    .container {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+  main
+    section.promo
+      .promo__background
+      +promoSlider(promoData)
+    section.about
+      .container.about__wrapper
+        .about__description
+          h2.about__description-title о нас
+          p
+            |Мы являемся одним из крупнейших производителей щеток для коммунальной уборочной техники различных типов размеров и конфигураций,
+            |которые используются для транспортных средств как отечественного, так и зарубежного производства.
+          p
+            |Одним из важнейших   аспектов нашей деятельности является безопасность и качество продукции.
+            |При производстве мы используем только качественное сырье от проверенных поставщиков.
+            |В лаборатории постоянно проводится контроль качества поставляемого сырья и качества произведенной продукции.
+            |Также придается большое значение расширению ассортимента выпускаемой продукции в соответствии с увеличением различных типов новой отечественной
+            |и зарубежной уборочной техники.
+        .about__advantages
+          h2.about__advantages-title основы нашего успеха
+          ul.about__advantages-list
+            each item in advantagesList
+              li.about__advantages-item
+                +advantage(item.iconName, item.iconWidth, item.iconHeight, item.text)
+    section.products
+      .container.container--no-padding
+        .products__background
+          +picture("content/main", "blue-brush", "blue-brush-sm", "png", "1100", "1100", "Изображение диска")
+        .container
+          ul.products__list
+            each item in productsList
+              li.products__item
+                +productCard(item)
 
-    h1 {
-      font-size: 24px;
-      line-height: 28px;
-    }
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")
 
-    a {
-      color: rgb(10, 10, 175);
-    }
-
-    li {
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 7px;
-    }
-
-    img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      display: block;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 768px) {
-      ol {
-        padding-left: 20px;
-      }
-
-      ol li {
-        margin-bottom: 15px;
-      }
-
-      .container {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-    }
-
-  -
-    var pages = [
-      {
-        name: "UI Kit — components.html",
-        src: "components.html"
-      },
-      {
-        name: "Главная — main.html",
-        src: "main.html"
-      },
-      {
-        name: "Партнеры — partners.html",
-        src: "partners.html"
-      },
-      {
-        name: "Дисковые щетки с обжимным металлическим кольцом — disc-brushes.html",
-        src: "disc-brushes.html"
-      },
-      {
-        name: "Беспроставочные дисковые щетки гнутого профиля с обжимным металлическим кольцом — spaceless-curved-profile-disc-brushes.html",
-        src: "spaceless-curved-profile-disc-brushes.html"
-      },
-      {
-        name: "Беспроставочные дисковые щетки из полипропилена прямого профиля — spaceless-straight-profile-disc-brushes.html",
-        src: "spaceless-straight-profile-disc-brushes.html"
-      },
-      {
-        name: "Беспроставочные дисковые щетки из полипропилена гнутого профиля типа «Би-лайн» — spaceless-be-line-profile-disc-brushes.html",
-        src: "spaceless-be-line-profile-disc-brushes.html"
-      },
-      {
-        name: "Лотковые щетки — trough-brushes.html",
-        src: "trough-brushes.html"
-      },
-      {
-        name: "Тупсы — tupsy.html",
-        src: "tupsy.html"
-      },
-      {
-        name: "Проставочные кольца — tupsy.html",
-        src: "spacer-rings.html"
-      },
-      {
-        name: "Полиамидная щетка — polyamide-brush.html",
-        src: "polyamide-brush.html"
-      },
-      {
-        name: "Ворс полипропиленовый — polypropylene-pile.html",
-        src: "polypropylene-pile.html"
-      },
-      {
-        name: "Стальной подкат — steel-tackle.html",
-        src: "steel-tackle.html"
-      }
-    ]
-
-  main.container.main-index
-    img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
-    h1 Список страниц и компонентов
-    ol
-      each page in pages
-        li
-          a(href= page.src)= page.name
+//- block modals
+//-  +modal("modal--feedback")
+//-    +modal-feedback()
+//-  +modal("modal--success modal--no-scale modal--fit-content")
+//-    +modal-success()

@@ -4,7 +4,7 @@ mixin header(headerMod, currentPage)
   -
     var mainNavItems = [
       {
-        href: "main.html",
+        href: "/",
         text: "главная",
         page: "main"
       },
@@ -82,7 +82,7 @@ mixin header(headerMod, currentPage)
           a.header__logo
             +icon("logo", 77, 48)(class="header__logo-svg")
         else
-          a.header__logo(href="main.html", aria-label="Переход на главную")
+          a.header__logo(href="/", aria-label="Переход на главную")
             +icon("logo", 77, 48)(class="header__logo-svg")
         nav.header__main-nav.main-nav
           button.main-nav__open.btn-reset(type="button", aria-label="Открыть меню")
@@ -95,7 +95,7 @@ mixin header(headerMod, currentPage)
               a.main-nav__logo-mobile
                 +icon("logo", 37, 23)(class="header__logo-svg")
             else
-              a.main-nav__logo-mobile(href="main.html", aria-label="Переход на главную")
+              a.main-nav__logo-mobile(href="/", aria-label="Переход на главную")
                 +icon("logo", 37, 23)(class="header__logo-svg")
             ul.main-nav__list
               each item in mainNavItems
