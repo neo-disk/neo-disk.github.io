@@ -117,7 +117,7 @@ const copy = () => {
 };
 
 const copyCNAME = () => {
-  return gulp.src('CNAME')
+  return gulp.src(['CNAME', 'yandex_*.html'])
     .pipe(gulp.dest('docs'));
 };
 
