@@ -109,17 +109,23 @@ const copy = () => {
     'source/*.php',
     'source/video/**', // учтите, что иногда git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
     'source/downloads/**',
+    'CNAME'
   ], {
     base: 'source',
   })
       .pipe(gulp.dest('docs'));
 };
 
+const copyCNAME = () => {
+  return gulp.src('CNAME')
+    .pipe(gulp.dest('docs'));
+};
+
 const clean = () => {
   return del('docs');
 };
 
-const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml);
+const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, copyCNAME);
 
 const start = gulp.series(build, syncserver);
 
