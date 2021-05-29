@@ -2129,8 +2129,7 @@ button,
   display: -ms-flexbox;
   display: flex;
   min-height: 581px;
-  height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-  height: calc(100 * var(--vh, 1vh) - var(--headerHeight) - var(--footerHeight)); }
+  margin-bottom: 20px; }
   @media (max-width: 767px) {
     .partners .container {
       min-height: 0;
