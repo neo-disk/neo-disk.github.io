@@ -20,11 +20,20 @@ if (promo) {
 const product = document.querySelector('.product');
 if (product) {
   const productBackground = product.querySelector('.product__background');
-  const productImage = product.querySelector('.product__image');
+  const productImages = product.querySelectorAll('.product__image');
+  const productText = product.querySelector('.product__text');
+  const productWrapper = product.querySelector('.product__wrapper');
 
+  const productImagesLength = productImages.length.toString();
+
+  productText.style.setProperty('--productImagesLength', productImagesLength);
+  productWrapper.style.setProperty('--productImagesLengthMinusOne', (productImages.length - 1).toString());
+
+  const firstImage = productImages[0];
   const setProductBackground = () => {
-    let productImageLeft = productImage.getBoundingClientRect().left;
-    productBackground.style.setProperty('--backgroundProductWidth', productImageLeft + productImage.offsetWidth + 'px');
+    let productImageLeft = firstImage.getBoundingClientRect().left;
+    productBackground.style.setProperty('--backgroundProductWidth', productImageLeft + firstImage.offsetWidth + 'px');
+
     let headerContactsProductLeft = headerContacts.getBoundingClientRect().left;
     productBackground.style.setProperty('--headerContactsProduct', window.innerWidth - headerContactsProductLeft + 20 + 'px');
   };

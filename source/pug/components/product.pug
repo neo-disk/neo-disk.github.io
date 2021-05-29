@@ -3,10 +3,12 @@ include ../mixins/basic/sprite
 mixin product(product)
   .product__background
   .product__wrapper
-    .product__image
-      if (product.imageName)
-        +picture("content/products", product.imageName, `${product.imageName}-sm`, "png", product.imageWidth, product.imageHeight, product.imageAlt)
-      else
+    if (product.images && product.images.length)
+      each image in product.images
+        .product__image
+          +picture("content/products", image.imageName, `${image.imageName}-sm`, "png", image.imageWidth, image.imageHeight, image.imageAlt)
+    else
+      .product__image
         +picture("content/products", "placeholder", "placeholder-sm", "png", product.imageWidth, product.imageHeight, "")
 
     .product__text
