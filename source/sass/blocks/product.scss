@@ -4,7 +4,7 @@
   padding-bottom: 145px;
   background-color: $color-white-smoke;
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     padding-bottom: 0;
   }
 
@@ -22,7 +22,7 @@
   width: var(--backgroundProductWidth);
   background-color: $color-wild-willow;
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     width: var(--headerContactsProduct);
     left: auto;
     right: 0;
@@ -34,14 +34,14 @@
 }
 
 .product__wrapper {
-  @media (min-width: 901px) {
+  @media (min-width: $viewport--lg) {
     display: grid;
     grid-auto-columns: 51.3% auto;
     grid-gap: 16px 40px;
     grid-template-rows: repeat(var(--productImagesLengthMinusOne), auto) 1fr;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -52,14 +52,14 @@
 .product__image {
   position: relative;
 
-  @media (min-width: 901px) {
+  @media (min-width: $viewport--lg) {
     max-width: 100%;
     width: 100%;
     margin-right: 0;
     padding-bottom: 20px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     max-width: 100%;
     width: 100%;
     order: 3;
@@ -67,7 +67,7 @@
 }
 
 .product__image:first-child {
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     order: 1;
   }
 }
@@ -75,7 +75,7 @@
 .product__image img {
   object-fit: cover;
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     width: 100%;
     height: auto;
   }
@@ -96,18 +96,19 @@
   line-height: 17px;
   color: $color-default-black;
 
+  padding-top: 24px;
+  padding-left: 40px;
+
   @include viewport--md {
     padding-right: 40px;
   }
 
-  @media (min-width: 901px) {
+  @media (min-width: $viewport--lg) {
     max-width: 100%;
-    padding-top: 24px;
-    padding-left: 40px;
     padding-bottom: 80px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: $viewport--lg) {
     max-width: 100%;
     order: 2;
     padding-bottom: 20px;

@@ -2237,7 +2237,7 @@ button,
   padding-top: 20px;
   padding-bottom: 145px;
   background-color: #f4f4f4; }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .product {
       padding-bottom: 0; } }
   @media (max-width: 767px) {
@@ -2252,7 +2252,7 @@ button,
   height: 100vh;
   width: var(--backgroundProductWidth);
   background-color: #b3d56d; }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .product__background {
       width: var(--headerContactsProduct);
       left: auto;
@@ -2261,7 +2261,7 @@ button,
     .product__background {
       width: 47px; } }
 
-@media (min-width: 901px) {
+@media (min-width: 1024px) {
   .product__wrapper {
     display: -ms-grid;
     display: grid;
@@ -2270,7 +2270,7 @@ button,
     -ms-grid-rows: (auto)[var(--productImagesLengthMinusOne)] 1fr;
     grid-template-rows: repeat(var(--productImagesLengthMinusOne), auto) 1fr; } }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .product__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2284,13 +2284,13 @@ button,
 
 .product__image {
   position: relative; }
-  @media (min-width: 901px) {
+  @media (min-width: 1024px) {
     .product__image {
       max-width: 100%;
       width: 100%;
       margin-right: 0;
       padding-bottom: 20px; } }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .product__image {
       max-width: 100%;
       width: 100%;
@@ -2298,7 +2298,7 @@ button,
           -ms-flex-order: 3;
               order: 3; } }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .product__image:first-child {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -2307,7 +2307,7 @@ button,
 .product__image img {
   -o-object-fit: cover;
      object-fit: cover; }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .product__image img {
       width: 100%;
       height: auto; } }
@@ -2328,17 +2328,17 @@ button,
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #000000; }
+  color: #000000;
+  padding-top: 24px;
+  padding-left: 40px; }
   @media (max-width: 1023px) {
     .product__text {
       padding-right: 40px; } }
-  @media (min-width: 901px) {
+  @media (min-width: 1024px) {
     .product__text {
       max-width: 100%;
-      padding-top: 24px;
-      padding-left: 40px;
       padding-bottom: 80px; } }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .product__text {
       max-width: 100%;
       -webkit-box-ordinal-group: 3;
