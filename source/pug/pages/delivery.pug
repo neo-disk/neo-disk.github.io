@@ -1,0 +1,85 @@
+extends ../base/layout
+
+include ../mixins/basic/picture
+include ../components/product
+
+block data
+  -
+    const delivery = {
+      title: "доставка",
+      description: [
+        "Доставка осуществляется по всей России"
+      ],
+      list: [
+        {
+          title: "Самовывоз",
+          elements: [
+            "Со склада по адресу: Московская область, г.Воскресенск, ул. Гиганта д. 2. График работы склада: пн – пт с 8:00 – 17:00, выходной сб-вс"
+          ]
+        },
+        {
+          title: "Бесплатная доставка",
+          elements: [
+            "Осуществляется до терминала компании «Деловые линии», «Байкал Сервис» в г.Зеленоград, г.Солнечногорск."
+          ]
+        },
+        {
+          title: "Доставка в регионы",
+          elements: [
+            "Происходит транспортной компанией. Стоимость доставки по России зависит от суммы заказа."
+          ]
+        }
+      ]
+    }
+
+    const payment = {
+      title: "оплата",
+      description: [
+        "Доставка осуществляется по всей России"
+      ]
+    }
+
+block variables
+  - var title = "Доставка и оплата"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    section.product.product--sub
+      .container.container--no-padding
+        .product__background
+        .product__wrapper
+          .product__image
+            +picture("content/products", "placeholder", "placeholder-sm", "png", delivery.imageWidth, delivery.imageHeight, "")
+          .product__text
+            h1= delivery.title
+            each item in delivery.description
+              p= item
+            if (delivery.list)
+              each item in delivery.list
+                strong= item.title
+                if (item.elements.length > 1)
+                  ul
+                    each element in item.elements
+                      li= element
+                else
+                  p= item.elements[0]
+            br
+            br
+            h1= payment.title
+            strong= "Безналичный расчет по выставленному счету"
+            br
+            section
+              p Цены на продукцию рассматриваются в индивидуальном порядке исходя из запросов потребителя. Мы готовы ответить на все ваши вопросы по телефонам и адресам e-mail, указанных в разделе #[a(class='contacts__link' href='/contacts.html' ) Контакты].
+              p При постоянном сотрудничестве возможна отсрочка платежа, а также предоставление дополнительных скидок. Специальные условия оговариваются отдельно.
+
+
+
+block scripts
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")
