@@ -2279,8 +2279,8 @@ button,
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 20px;
-    padding-bottom: 20px; } }
+    gap: 40px;
+    padding-bottom: 40px; } }
 
 .product__image {
   position: relative; }
@@ -2329,8 +2329,7 @@ button,
   font-size: 14px;
   line-height: 17px;
   color: #000000;
-  padding-top: 24px;
-  padding-left: 40px; }
+  padding-top: 24px; }
   @media (max-width: 1023px) {
     .product__text {
       padding-right: 40px; } }
@@ -2344,7 +2343,9 @@ button,
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
               order: 2;
-      padding-bottom: 20px; } }
+      padding-bottom: 20px;
+      padding-left: 40px;
+      background: center; } }
   @media (max-width: 767px) {
     .product__text {
       padding-left: 23px;

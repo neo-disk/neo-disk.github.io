@@ -15,7 +15,7 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   output: {
     filename: '[name].min.js',
-    path: path.resolve(__dirname, 'docs/js'),
+    path: path.resolve(__dirname, isDev  ? 'dev_build' : 'docs/js'),
   },
   optimization: {
     minimize: isDev ? false : true,
