@@ -2233,6 +2233,22 @@ button,
     .partners__map--mobile-shown {
       z-index: 3; } }
 
+.contacts {
+  position: relative;
+  background-color: #f4f4f4; }
+
+.contacts__background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: var(--backgroundContactsWidth);
+  height: 100vh;
+  background-color: #b3d56d; }
+  @media (max-width: 767px) {
+    .contacts__background {
+      display: none; } }
+
 .product {
   position: relative;
   padding-top: 20px;

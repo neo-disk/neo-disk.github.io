@@ -61,3 +61,20 @@ if (partners) {
     setPartnersBackground();
   });
 }
+
+const contacts = document.querySelector('.contacts');
+
+if (contacts) {
+  const partnersBackground = document.querySelector('.contacts__background');
+
+  const setContactsBackground = () => {
+    let headerContactsProductLeft = headerContacts.getBoundingClientRect().left;
+    partnersBackground.style.setProperty('--backgroundContactsWidth', window.innerWidth - headerContactsProductLeft + 'px');
+  };
+
+  setContactsBackground();
+
+  window.addEventListener('resize', function () {
+    setContactsBackground();
+  });
+}

@@ -1,0 +1,18 @@
+.contacts {
+  position: relative;
+  background-color: $color-white-smoke;
+}
+
+.contacts__background {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: var(--backgroundContactsWidth);
+  height: 100vh;
+  background-color: $color-wild-willow;
+
+  @include viewport--sm {
+    display: none;
+  }
+}
