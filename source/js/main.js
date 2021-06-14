@@ -18,3 +18,4 @@ setHeaderScripts();
 import './modules/css-background';
 import './modules/main-promo-slider';
 import './modules/partners';
+import './modules/contacts';

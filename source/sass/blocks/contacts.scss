@@ -11,8 +11,45 @@
   width: var(--backgroundContactsWidth);
   height: 100vh;
   background-color: $color-wild-willow;
+}
 
-  @include viewport--sm {
-    display: none;
+.contacts_group {
+  margin-bottom: 16px;
+}
+
+.contacts_group p {
+  @media (min-width: 1024px) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.contacts_group .contact-link {
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+
+.content {
+  display: flex;
+
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.product__text.contacts {
+  margin: 0 48px 48px;
+  min-width: 300px;
+}
+
+.contacts__map {
+  @media (max-width: 1023px) {
+    height: 400px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    flex: 1;
+    height: calc(100vh - var(--headerHeight) - var(--footerHeight) - 32px);
   }
 }
