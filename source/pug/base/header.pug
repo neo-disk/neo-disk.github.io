@@ -72,6 +72,16 @@ mixin header(headerMod, currentPage)
         href: "partners.html",
         text: "партнеры",
         page: "partners"
+      },
+      {
+        href: "delivery.html",
+        text: "Доставка",
+        page: "delivery"
+      },
+      {
+        href: "contacts.html",
+        text: "Контакты",
+        page: "contacts"
       }
     ]
 
@@ -118,8 +128,13 @@ mixin header(headerMod, currentPage)
         .header__contacts
           ul.header__contacts-list
             li.header__contacts-item
+              if("contacts" === currentPage)
+                a.main-nav__link.main-nav__link--active="Контакты"
+              else
+                a.main-nav__link(href="contacts.html")="Контакты"
+            //li.header__contacts-item
               //- a.header__email(href="mailto:mail@neo-disk.ru ") mail@neo-disk.ru
-              +contact-link("mail", "mail@neo-disk.ru", "header")
-            li.header__contacts-item
+              //+contact-link("mail", "mail@neo-disk.ru", "header")
+            //li.header__contacts-item
               //- a.header__phone(href="tel:84959942739") 8-495-994-27-39
-              +contact-link("phone", "8-495-994-27-39", "header")
+              //+contact-link("phone", "8-495-994-27-39", "header")

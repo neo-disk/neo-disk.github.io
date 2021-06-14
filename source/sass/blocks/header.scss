@@ -26,6 +26,14 @@
   margin-top: 0;
   margin-right: 2px;
   margin-left: 15px;
+
+  @media (max-width: $viewport--md) {
+    width: 20%;
+
+    & > ul {
+      display: none;
+    }
+  }
 }
 
 .header__contacts-list {

@@ -225,6 +225,12 @@
   }
 }
 
+@media (min-width: $viewport--md) {
+  .main-nav__item:last-child{
+    display: none;
+  }
+}
+
 @include viewport--sm {
   .main-nav {
     &--mobile-active {
@@ -419,5 +425,9 @@
     line-height: 13px;
     text-transform: uppercase;
     color: $color-eclipse;
+  }
+
+  .main-nav__item--mobile-last > .main-nav__link {
+    display: none;
   }
 }
