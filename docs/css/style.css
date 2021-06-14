@@ -1198,6 +1198,11 @@ button,
   margin-top: 0;
   margin-right: 2px;
   margin-left: 15px; }
+  @media (max-width: 768px) {
+    .header__contacts {
+      width: 20%; }
+      .header__contacts > ul {
+        display: none; } }
 
 .header__contacts-list {
   display: -webkit-box;
@@ -1453,6 +1458,10 @@ button,
   .main-nav__item {
     margin-right: 15px; } }
 
+@media (min-width: 768px) {
+  .main-nav__item:last-child {
+    display: none; } }
+
 @media (max-width: 767px) {
   .main-nav--mobile-active .main-nav__overlay {
     display: block;
@@ -1599,7 +1608,9 @@ button,
     font-size: 11px;
     line-height: 13px;
     text-transform: uppercase;
-    color: #383838; } }
+    color: #383838; }
+  .main-nav__item--mobile-last > .main-nav__link {
+    display: none; } }
 
 .footer {
   position: relative;

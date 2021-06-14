@@ -166,21 +166,25 @@
                   </li>
                   <li class="main-nav__item"><a class="main-nav__link" href="partners.html">партнеры</a>
                   </li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="delivery.html">Доставка</a>
+                  </li>
+                  <li class="main-nav__item"><a class="main-nav__link main-nav__link--active">Контакты</a>
+                  </li>
                 </ul>
               </div>
             </nav>
             <div class="header__contacts">
               <ul class="header__contacts-list">
-                <li class="header__contacts-item"><a class="contact-link contact-link--header" href="mailto:mail@neo-disk.ru">
-                    <svg class="contact-link__icon contact-link__icon--mail" width="16" height="13" aria-hidden="true" aria-label="Почта: mail@neo-disk.ru">
-                      <use xlink:href="#icon-mail"></use>
-                    </svg><span class="contact-link__text">mail@neo-disk.ru</span></a>
+                <li class="header__contacts-item"><a class="main-nav__link main-nav__link--active">Контакты</a>
                 </li>
-                <li class="header__contacts-item"><a class="contact-link contact-link--header" href="tel:84959942739">
-                    <svg class="contact-link__icon contact-link__icon--phone" width="16" height="13" aria-hidden="true" aria-label="Телефон: 8-495-994-27-39">
-                      <use xlink:href="#icon-phone"></use>
-                    </svg><span class="contact-link__text">8-495-994-27-39</span></a>
-                </li>
+                <!--li.header__contacts-item
+                //- a.header__email(href="mailto:mail@neo-disk.ru ") mail@neo-disk.ru
+                //+contact-link("mail", "mail@neo-disk.ru", "header")
+                -->
+                <!--li.header__contacts-item
+                //- a.header__phone(href="tel:84959942739") 8-495-994-27-39
+                //+contact-link("phone", "8-495-994-27-39", "header")
+                -->
               </ul>
             </div>
           </div>
