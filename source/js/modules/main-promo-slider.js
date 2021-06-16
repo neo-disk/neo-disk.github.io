@@ -1,12 +1,13 @@
 const promoSlider = document.querySelector('.promo__slider');
 
 if (promoSlider) {
+  // eslint-disable-next-line no-undef
   let swiper = new Swiper('.swiper-container', {
     loop: true,
-    speed: 600,
+    speed: 800,
     autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
+      delay: 7000,
+      disableOnInteraction: true,
     },
 
     navigation: {
