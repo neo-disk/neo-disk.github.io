@@ -7,6 +7,11 @@ block data
   -
     const delivery = {
       title: "доставка",
+      image: {
+        name: "russia-green-map",
+        width: "718",
+        height: "404"
+      },
       description: [
         "Доставка осуществляется по всей России"
       ],
@@ -55,7 +60,7 @@ block main
         .product__background
         .product__wrapper
           .product__image
-            +picture("content/products", "placeholder", "placeholder-sm", "png", delivery.imageWidth, delivery.imageHeight, "")
+            +picture("content/delivery", delivery.image.name, `${delivery.image.name}-sm`, "png", delivery.image.width, delivery.image.height, "")
           .product__text
             h1= delivery.title
             each item in delivery.description
