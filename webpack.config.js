@@ -12,13 +12,16 @@ module.exports = {
     main: './js/main.js',
     vendor: './js/vendor.js',
   },
-  devtool: isDev ? 'source-map' : false,
+  // devtool: isDev ? 'source-map' : false,
+  devtool: false,
   output: {
     filename: '[name].min.js',
-    path: path.resolve(__dirname, isDev  ? 'dev_build' : 'docs/js'),
+    // path: path.resolve(__dirname, isDev  ? 'dev_build' : 'docs/js'),
+    path: path.resolve(__dirname, 'docs/js'),
   },
   optimization: {
-    minimize: isDev ? false : true,
+    // minimize: isDev ? false : true,
+    minimize: true
   },
   module: {
     rules: [
