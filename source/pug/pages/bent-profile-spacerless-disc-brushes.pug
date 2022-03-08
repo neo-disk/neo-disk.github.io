@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Беспроставочные дисковые щетки из полипропилена гнутого профиля типа «БИ-ЛАЙН»" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Щетка дисковая «Билайн»" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -15,7 +15,7 @@ block variables
   -
     const bentProfileSpacerlessDiscBrushesTitle = {
       lvl: 2,
-      text: "Беспроставочные дисковые щетки из&nbsp;полипропилена гнутого профиля типа &laquo;БИ&nbsp;-&nbsp;ЛАЙН&raquo;",
+      text: "Щетка дисковая «Билайн»",
       classes: "title--h2 pseudo pseudo--line fir",
       isTitleNeed: true
     }
@@ -24,7 +24,7 @@ block variables
       lvl: 3,
       text: "Данный вид дисковой щетки идеален для удаления пыли и&nbsp;мелкого мусора с&nbsp;дорожного покрытия в&nbsp;летний период. Он&nbsp;имеют специально разработанную изогнутую &laquo;объёмную&raquo; форму. Когда эти диски набираются на&nbsp;вал, то&nbsp;образуют конструкцию в&nbsp;виде пчелиных сот. Благодаря этому при вращении вала достигается эффект сплошной подметающей поверхности фронтальной щётки, без промежутков.",
       classes: "title--h3 pseudo pseudo--info fir",
-      isTitleNeed: true
+      isTitleNeed: false
     }
 
     const bentProfileSpacerlessDiscBrushesImageParameters = {
@@ -69,12 +69,21 @@ block main
                 p
                   strong Полипропилен
                 p
-                  i диаметром 2,3&nbsp;&mdash; 2,5&nbsp;мм
+                  i Износостойкий, морозоустойчивый полипропиленовый ворс диаметром 2,3-2,5 мм.
 
 
 
       .grid__cell
         +global-slider(bentProfileSpacerlessDiscBrushesSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            +title(shopContentTextTitle)
+            p.fir.d-200  Данный вид щетки дисковой идеален для удаления пыли и мелкого мусора с дорожного покрытия в летний период. Он имеет специально разработанную изогнутую «объёмную» форму.
+            p.fir.d-300  Когда эти щётки набираются на вал, то образуют конструкцию в виде пчелиных сот. Благодаря этому при вращении вала достигается эффект сплошной подметающей поверхности фронтальной щётки, без промежутков.
+            p.fir.d-400  Данный вид щеток может подвергаться вторичной переработке.
+            a(href="#").link.read-more.fir Читать больше
 
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
