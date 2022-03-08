@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Беспроставочные дисковые щетки гнутого профиля с обжимным металлическим кольцом" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Щетка дисковая с гнутым металлическим сердечником" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -15,7 +15,7 @@ block variables
   -
     const shapedDiscBrushesWithAShapedMetalRingTitle = {
       lvl: 2,
-      text: "Беспроставочные дисковые щетки гнутого профиля с&nbsp;обжимным металлическим кольцом",
+      text: "Щетка дисковая с гнутым металлическим сердечником",
       classes: "title--h2 pseudo pseudo--line fir",
       isTitleNeed: true
     }
@@ -24,7 +24,7 @@ block variables
       lvl: 3,
       text: "Данный вид дисковой щетки изготавливается практически также, как и&nbsp;с&nbsp;плоским сердечником, только в&nbsp;конце проходит еще одну стадию производства: он&nbsp;зажимается прессом на&nbsp;специальной зигзагообразной оснастке и&nbsp;принимает изогнутую форму. Благодаря гнутому профилю, ворс распределен по&nbsp;валу уборочной машины более равномерно, что значительно повышает качество уборки.",
       classes: "title--h3 pseudo pseudo--info fir",
-      isTitleNeed: true
+      isTitleNeed: false
     }
 
     const shapedDiscBrushesWithAShapedMetalRingImageParameters = {
@@ -80,6 +80,15 @@ block main
 
       .grid__cell
         +global-slider(shapedDiscBrushesWithAShapedMetalRingSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            +title(shopContentTextTitle)
+            p.fir.d-200  Устанавливается на основное и дополнительное оборудование коммунальной техники отечественного и зарубежного производства.
+            p.fir.d-300  Изготавливается также как щетка дисковая с металлическим сердечником. Однако имеет гнутый профиль, благодаря чему ворс распределён по валу уборочной машины более равномерно, что значительно повышает качество уборки.
+            //p.fir.d-400  Однако имеет гнутый профиль, благодаря чему ворс распределён по валу уборочной машины более равномерно, что значительно повышает качество уборки.
+            a(href="#").link.read-more.fir Читать больше
 
 
     //- на странице запрещен "голый" код
