@@ -1,0 +1,85 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Тупсы" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "tups" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const tupsTitle = {
+      lvl: 2,
+      text: "Тупсы",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const tupsSubtitle = {
+      lvl: 3,
+      text: "Информация не доступна",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const tupsImageParameters = {
+      path: "content/shop",
+      image: "tups",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Тупсы черного цвета"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(tupsImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(tupsTitle)
+          +title(tupsSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Материал рабочей части
+              .box-description__right
+                p Полипропиленовый ворс диаметром 2,3-2,5&nbsp;мм,
+                p Стальной подкат 3&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Длина тупсы
+              .box-description__right
+                p 300-350&nbsp;мм.
+
+
+
+      .grid__cell
+        +global-slider(tupsSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+            .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+              +title(shopContentTextTitle)
+              p.fir.d-200  Предназначены для замены наполнителя в&nbsp;многоразовых лотковых щетках для увеличения срока ее&nbsp;службы, являются сменными элементами щетки лотковой.
+              p.fir.d-300  Традиционно тупсы производятся из&nbsp;подката, который отличается повышенной износоустойчивостью, заправленного и&nbsp;прочно обжатого в&nbsp;профиль стального типа. Тупсы с&nbsp;ворсом из&nbsp;металла (подкатом), в&nbsp;основном, используются в&nbsp;зимний сезон для сбора обледеневшей грязи в&nbsp;сложнодоступных местах по&nbsp;краям дороги, у&nbsp;тротуаров, бордюров, где применение щеточного оснащения прочих видов малоэффективно либо невозможно.
+              p.fir.d-400  Тупсы с&nbsp;ворсом из&nbsp;полипропилена с&nbsp;легкостью справляются со&nbsp;сбором пыли, мусора, при условии, что температура окружающей среды&nbsp;&mdash; от&nbsp;нуля и&nbsp;выше. В&nbsp;качестве набивки щеток лотковых с&nbsp;комбинированным ворсом, используются тупсы обоих видов.
+              a(href="#").link.read-more.fir Читать больше
+
+
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals

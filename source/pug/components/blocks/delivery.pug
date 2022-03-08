@@ -1,0 +1,12 @@
+mixin delivery
+  section.grid.grid--deliv.delivery
+      .grid__cell.grid__cell--bg-map.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +map()
+
+      .grid__cell.grid__cell--bg.grid__cell--big
+        .grid__cell-inner.delivery__content.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+          +delivery-information()
+          +delivery-content-text()
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +global-slider(sliderData)

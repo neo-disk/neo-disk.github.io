@@ -1,0 +1,40 @@
+.additional-nav-list {
+  opacity: 0;
+  transition: opacity $trans-default;
+
+  position: absolute;
+  width: size(274px);
+  left: 100%;
+  z-index: 1;
+  background-color: #c0d99f;
+  color: $color-chicaho;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: size(20px);
+  top: -500px;
+  padding-bottom: size(10px);
+  font-size: size(13px);
+  line-height: size(14px);
+  box-shadow: 8px 5px 5px 2px rgba($color-nero, 0.2), 15px 0 8px -3px rgba($color-nero, 0.2) inset;
+
+  &--visible {
+    display: block;
+    top: -12px;
+    opacity: 1;
+    transition: opacity $trans-default;
+  }
+
+  &--mobile {
+    display: block;
+    position: static;
+    opacity: 1;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+.additional-nav-list__item {
+  margin-bottom: 5px;
+}

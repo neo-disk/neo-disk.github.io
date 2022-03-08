@@ -1,0 +1,93 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лотковые щетки" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "tray-brushes" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const trayBrushesTitle = {
+      lvl: 2,
+      text: "Лотковые щетки",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const trayBrushesSubtitle = {
+      lvl: 3,
+      text: "Информация не доступна",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const trayBrushesImageParameters = {
+      path: "content/shop",
+      image: "tray-brushes",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Лотковая щетка синего цвета",
+      classFir: "fir"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(trayBrushesImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(trayBrushesTitle)
+          +title(trayBrushesSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Материал основания
+              .box-description__right
+                p Пластик 20&nbsp;мм,
+                p Водостойкая фанера 24&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал набивки
+              .box-description__right
+                p Полипропиленовый ворс диаметром 2,3-2,5&nbsp;мм различной длины,
+                p Стальной подкат 3&nbsp;мм различной длины.
+            .box-description__item.fir.d-600
+              .box-description__left
+                p Детали
+              .box-description__right
+                p
+                  strong Изготавливается по&nbsp;индивидуальным размерам
+
+
+
+
+      .grid__cell
+        +global-slider(trayBrushesSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+            .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+              +title(shopContentTextTitle)
+              p.fir.d-200  Щетки лотковые предназначены для уборки прибордюрной территории дороги, тротуарных поребриков, других трудно доступных мест. Лотковая щетка имеет конусообразную форму, которая и&nbsp;позволяет использовать ее&nbsp;для удаления мусора из&nbsp;лотка дороги. По&nbsp;конструкции лотковые щетки состоят из&nbsp;сплошного кольцевого основания с&nbsp;набивочным материалом. В&nbsp;качестве набивочного материала применяют полипропиленовую леску или стальную полосу из&nbsp;пружинистой стали (подкат). Возможен вариант использования обоих типов набивочного материала. Щетки лотковые находят широкое применение в&nbsp;спецавтохозяйствах коммунальных служб городов, аэропортов, больших автотранспортных компаниях, промышленных предприятиях и&nbsp;др.
+              p.fir.d-300  Основание лотковой щетки также может быть изготовлено в&nbsp;виде сегментов (секторы), которые выполнены из&nbsp;ударопрочного, износо- и&nbsp;морозоустойчивого полипропилена, либо фанеры. С&nbsp;учетом диаметра, основание лотковой многоразовой щеточной установки может состоять из&nbsp;двух&nbsp;&mdash; пяти сегментов. Каждый из&nbsp;них имеет несколько рядов конических отверстий.
+              a(href="#").link.read-more.fir Читать больше
+
+
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals

@@ -1,0 +1,16 @@
+mixin shop
+  section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image()
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +shop-information()
+
+      .grid__cell
+        +global-slider(sliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          +shop-content-text()
+

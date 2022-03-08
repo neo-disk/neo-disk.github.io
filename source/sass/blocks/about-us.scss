@@ -1,0 +1,132 @@
+.about-us .container {
+  width: size(1201px);
+  padding-left: size(100px);
+  color: $color-olivine;
+  background: $frostee-to-top;
+
+  @include vp-1919 {
+    width: 1201px;
+  }
+
+  @include vp-1439 {
+    padding-left: 32px;
+  }
+
+  @include vp-1279 {
+    width: 100%;
+  }
+
+  @include vp-1023 {
+    width: 100vw;
+    padding-left: 24px;
+  }
+
+  @include vp-767 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.about-us__wrapper {
+  color: $color-default-black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: size(80px);
+
+  @include vp-1023 {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.about-us__information {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 94.5%;
+    top: 7px;
+    right: size(-45px);
+    background: $mantis-to-top;
+  }
+
+  @include vp-1279 {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.about-us__text {
+  color: $color-limeade;
+  font-size: size(22px);
+  line-height: 1.2;
+  font-weight: 600;
+  max-width: size(490px);
+  margin-top: 0;
+  margin-bottom: 30px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../img/sprite/icon-info-green.svg") no-repeat;
+    width: size(31px);
+    height: size(31px);
+    top: 65px;
+    left: -50px;
+  }
+
+  @include vp-1439 {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include vp-1279 {
+    font-size: 18px;
+    max-width: 400px;
+  }
+
+  @include vp-1023 {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+  }
+}
+
+.about-us__inner {
+  max-width: size(520px);
+  font-size: size(18px);
+  line-height: size(22px);
+
+  @include vp-1279 {
+    max-width: 400px;
+    font-size: 16px;
+  }
+
+  @include vp-1023 {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.about-us__semibold {
+  font-weight: 600;
+}
+
+.about-us__inner p {
+  margin: 0;
+  margin-bottom: 10px;
+}

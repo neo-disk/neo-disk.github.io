@@ -1,0 +1,23 @@
+-
+  const neoDiskVideoProperties = {
+    link: "video/video-main.mp4",
+    width: "814px",
+    height: "457px",
+    type: "video/mp4",
+    mute: "muted"
+  }
+
+-
+  const introTitleParameters = {
+    lvl: 1,
+    text: "Интро сайта НэоДиск",
+    classes: "visually-hidden",
+    isTitleNeed: true
+  };
+
+mixin intro()
+  .intro
+    .container
+      +title(introTitleParameters)
+      +video(neoDiskVideoProperties)
+      +main-page-swiper()

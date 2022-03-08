@@ -1,0 +1,31 @@
+mixin contacts()
+
+  -
+    var headerPhone = {
+    href: "tel:84959942739",
+    text: "8 495 994 27 39"
+    }
+    var headerMail = {
+      href: "mailto:mail@neo-disk.ru",
+      text: "mail@neo-disk.ru"
+    }
+
+
+  .contacts.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+    .container.contacts__container.fir
+
+      a(href="index.html" title="Перейти на главную").contacts__logo
+        +icon("logo-circle", "130", "130").contacts__logo-circle
+        +icon("contacts-label-2", "156", "39").contacts__logo-text
+
+      .contacts__addition
+          p.contacts__text
+            +icon("icon-contacts", "30px", "30px")
+            | Контакты
+          ul.contacts__list
+            li.contacts__item
+              a(href="tel:84959942739").contacts__link.link 8 495 994 27 39
+                +icon("icon-phone-green", "17px", "17px")
+            li.contacts__item
+              a(href="mail@neo-disk.ru").contacts__link.link mail@neo-disk.ru
+                +icon("icon-mail-green", "17px", "17px")

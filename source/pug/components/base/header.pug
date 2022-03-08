@@ -1,0 +1,96 @@
+mixin header(headerMods, currentPage)
+  -
+    var headerLinks = [
+      {
+        href: "index.html",
+        text: "Главная",
+        page: "index"
+      },
+      {
+        href: "#",
+        text: "Каталог",
+        classes: "main-nav__link--shop",
+        page: "shop"
+      },
+      {
+        href: "dealers.html",
+        text: "Партнёры",
+        page: "dealers"
+      },
+      {
+        href: "delivery.html",
+        text: "Доставка",
+        page: "delivery"
+      },
+    ]
+
+  -
+    var brushesLinks = [
+      {
+        href: "disc-brushes-with-metal-crimp-ring.html",
+        text: "Дисковые щетки с обжимным металлическим концом"
+      },
+      {
+        href: "spacerless-straight-profile-disc-brushes.html",
+        text: "Беспроставочные дисковые щетки прямого профиля"
+      },
+      {
+        href: "bent-profile-spacerless-disc-brushes.html",
+        text: "Беспроставочные дисковые щетки гнутого профиля типа би-лайн"
+      },
+      {
+        href: "shaped-disc-brushes-with-a-shaped-metal-ring.html",
+        text: "Беспроставочные дисковые щетки гнутого профиля с обжимным металлическим кольцом"
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container.header__container
+      if(currentPage === "index")
+        //- lighthouse снимает 10 баллов SEO за <a> без href
+        span.header__logo
+          +icon("logo-circle", "62px", "64px").header__logo-circle.logo
+          +icon("logo-text", "180px", "36px").header__logo-text
+      else
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +icon("logo-circle", "62px", "64px").header__logo-circle.logo
+          +icon("logo-text", "180px", "36px").header__logo-text
+      nav.main-nav
+        .main-nav__wrapper
+          ul.main-nav__list
+            each link, index in headerLinks
+              li.main-nav__item
+                if(link.page === currentPage)
+                  a.main-nav__link.main-nav__link--active(class=link.classes)=link.text
+                else
+                  a.main-nav__link(href=link.href, class=link.classes)=link.text
+        ul.main-nav__catalog-list
+            li.main-nav__catalog-item.main-nav__catalog-item--brushes
+              a(href="#").main-nav__catalog-link.link.link--lima.main-nav__catalog-link--brushes.main-nav__catalog-link--show Дисковые шетки
+              +additional-nav-list(brushesLinks)
+            li.main-nav__catalog-item
+              a(href="tray-brushes.html").main-nav__catalog-link.link.link--lima Лотковые щетки
+            li.main-nav__catalog-item.main-nav__catalog-item--third
+              a(href="tups.html").main-nav__catalog-link.link.link--lima Тупсы
+            li.main-nav__catalog-item
+              a(href="spacer-rings.html").main-nav__catalog-link.link.link--lima Проставочные кольца
+            li.main-nav__catalog-item
+              a(href="polypropylene-pile.html").main-nav__catalog-link.link.link--lima Полипропиленовый ворс
+            li.main-nav__catalog-item
+              a(href="steel-roll.html").main-nav__catalog-link.link.link--lima Стальной подкат
+            li.main-nav__catalog-item
+              a(href="polyamide-brush.html").main-nav__catalog-link.link.link--lima Полиамидная щетка
+      .additional-nav
+        p.additional-nav__text
+          +icon("icon-contacts", "30px", "31px")
+          | Контакты
+        .additional-nav__inner
+          a.link.additional-nav__link(href="tel:84959942739")
+            +icon("icon-phone-green", "18px", "18px")
+            | 8 495 994 27 39
+          a.link.additional-nav__link(href="mailto:mail@neo-disk.ru")
+            +icon("icon-mail-green", "15px", "15px")
+            | mail@neo-disk.ru
+
+      button.header__burger.header__burger--closed(type="button" aria-label="Открыть меню")
+      .blackout

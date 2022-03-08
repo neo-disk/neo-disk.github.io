@@ -1,0 +1,20 @@
+-
+  const deliveryInformationTitle = {
+    lvl: 2,
+    text: "Доставка",
+    classes: "title--h2 pseudo pseudo--line fir",
+    isTitleNeed: true
+  }
+
+  const deliveryInformationSubtitle = {
+    lvl: 3,
+    text: "Доставка осуществляется по всей России",
+    classes: "title--h3 pseudo pseudo--info fir",
+    isTitleNeed: true
+  }
+
+mixin delivery-information
+  +title(deliveryInformationTitle)
+  +title(deliveryInformationSubtitle)
+  +box-information()
+

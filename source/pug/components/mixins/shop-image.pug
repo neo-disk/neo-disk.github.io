@@ -1,0 +1,13 @@
+-
+  const imageDefaultParameters = {
+    path: "content/shop",
+    image: "1",
+    format: "png",
+    width: "1500",
+    height: "1899",
+    alt: "Щётки зеленого и серого цвета"
+  }
+
+mixin shop-image(imageProps= imageDefaultParameters)
+  .shop-image
+    +picture(imageProps.path, imageProps.image, imageProps.format, imageProps.width, imageProps.height, imageProps.alt)

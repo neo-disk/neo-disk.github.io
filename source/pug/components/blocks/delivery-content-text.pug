@@ -1,0 +1,22 @@
+-
+  const deliveryContentTextTitle = {
+    lvl: 2,
+    text: "Оплата",
+    classes: "title--h2 pseudo pseudo--line fir",
+    isTitleNeed: true
+  }
+
+  const deliveryContentTextSubitle = {
+    lvl: 3,
+    text: "Безналичный расчет по выставленному счету",
+    classes: "title--h3 pseudo pseudo--info h3--offset fir",
+    isTitleNeed: true
+  }
+
+
+mixin delivery-content-text()
+  +title(deliveryContentTextTitle)
+  +title(deliveryContentTextSubitle)
+  .content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+    p.fir Цены на&nbsp;продукцию рассматриваются в&nbsp;индивидуальном порядке исходя из&nbsp;запросов потребителя. Мы&nbsp;готовы ответить на&nbsp;все ваши вопросы по&nbsp;телефонам и&nbsp;адресам e-mail, указанных в&nbsp;разделе Контакты.
+    p.fir При постоянном сотрудничестве возможна отсрочка платежа, а&nbsp;также предоставление дополнительных скидок. Специальные условия оговариваются отдельно.

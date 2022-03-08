@@ -1,0 +1,37 @@
+-
+  const footerTitleParameters = {
+    lvl: 2,
+    text: "О разработчиках сайта",
+    classes: "visually-hidden",
+    isTitleNeed: true
+  };
+
+-
+  const footerFirstLinkProps = {
+    href: "https://weeee.ru/",
+    text: "weeee.ru",
+    target: "_blank",
+    rel: "nofollow noopener"
+  }
+
+-
+  const footerSecondLinkProps = {
+    href: "http://development.ru/",
+    text: "development.ru",
+    target: "_blank",
+    rel: "nofollow noopener"
+  }
+
+
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    if (contactsNeeded)
+      +contacts()
+    .container.footer__container.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+      +title(footerTitleParameters).fir
+      p.footer__copyright.fir &#169; 2019–2021  ООО «НЕО ДИСК»
+      p.footer__city.fir г. Москва
+      p.footer__design.fir дизайн:&nbsp;
+        +link(footerFirstLinkProps)
+      p.footer__develop.fir разработка сайта:&nbsp;
+        +link(footerSecondLinkProps)

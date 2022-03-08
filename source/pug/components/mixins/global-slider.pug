@@ -1,0 +1,102 @@
+mixin global-slider(data)
+  if  (currentPage !== "index")
+    .global-slider.swiper(data-slider)
+      .global-slider__wrapper.swiper-wrapper
+        each picture in data
+          .global-slider__slide.swiper-slide
+            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt)
+
+      if (sliderPaginationNeeded)
+        .swiper-pagination.swiper-pagination-new
+
+      if (sliderNavigationNeeded)
+        .swiper-button-next
+        .swiper-button-prev
+  if (currentPage === "index")
+    .main-swiper.swiper
+      .main-swiper__wrapper.swiper-wrapper
+        each picture in data
+          .main-swiper__slide.swiper-slide
+            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt)
+            .main-swiper__shadow
+      .main-swiper__pagination
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- -
+//-   const mainSlides1 = [
+//-     {
+//-       path: "slides",
+//-       image: "slide1",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Первый слайд"
+//-     },
+//-     {
+//-       path: "slides",
+//-       image: "slide2",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Второй слайд"
+//-     },
+//-     {
+//-       path: "slides",
+//-       image: "slide3",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Третий слайд"
+//-     },
+//-     {
+//-       path: "slides",
+//-       image: "slide4",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Четвертый слайд"
+//-     },
+//-     {
+//-       path: "slides",
+//-       image: "slide5",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Пятый слайд"
+//-     },
+//-     {
+//-       path: "slides",
+//-       image: "slide6",
+//-       format: "jpg",
+//-       width: "387",
+//-       height: "457",
+//-       alt: "Шестой слайд"
+//-     },
+//-   ];
+
+//- mixin global-slider
+
+//-   .main-swiper.swiper
+//-     .main-swiper__wrapper.swiper-wrapper
+//-       each picture in mainSlides
+//-         .main-swiper__slide.swiper-slide
+//-           +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt)
+//-     .main-swiper__pagination

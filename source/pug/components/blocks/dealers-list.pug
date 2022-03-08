@@ -1,0 +1,141 @@
+mixin dealers-list()
+  -
+    var firms = [
+      {
+        title: "ООО «ПКФ КОНТУР»",
+        city: "105523, г. Москва,",
+        street: "ш. Щёлковское, д. 100, корп. 106",
+        link: "#",
+        longitude: "55.80938875440895",
+        latitude: "37.83219349867248",
+        logo: "img/content/dealers/logo-contur.png",
+        logoW: "254",
+        logoH: "70",
+        phone: "+7 (499) 769-57-24",
+        phoneHref: "+74997695724",
+        email: "bossandru@yandex.ru",
+        emailHref: "mailto:bossandru@yandex.ru",
+
+      },
+      {
+        title: "ООО «САТЕЛЛИТ»",
+        city: "105275, г. Москва,",
+        street: "ул. Уткина, д. 48, стр. 2",
+        link: "#",
+        longitude: "55.75907186728388",
+        latitude: "37.744481525131185",
+        logo: "img/content/dealers/logo-satellit.png",
+        logoW: "411",
+        logoH: "128",
+        phone: "+7 (926) 880-27-67",
+        phoneHref: "+79268802767",
+        email: "zkrabota495@gmail.com",
+        emailHref: "mailto:zkrabota495@gmail.com",
+      },
+      {
+        title: "ООО «ДОРЭС»",
+        city: "123007, г. Москва,",
+        street: "ул. 1-я Магистральная, д. 16, стр. 1",
+        link: "#",
+        longitude: "55.77082106895578",
+        latitude: "37.520797",
+        logo: "img/content/dealers/logo-dores.png",
+        logoW: "205",
+        logoH: "91",
+        phone: "+7 (925) 552-92-00",
+        phoneHref: "+79255529200",
+        email: "maksim@autozap.shop",
+        emailHref: "mailto:maksim@autozap.shop",
+      },
+      {
+        title: "АО «КОМИНВЕСТ-АКМТ»",
+        city: "125315, г. Москва,",
+        street: "Ленинградский проспект, д. 80, корп. 17",
+        link: "#",
+        longitude: "55.807956068932",
+        latitude: "37.51150849999988",
+        logo: "img/content/dealers/logo-cominvest.png",
+        phone: "+7 (495) 212 2122",
+        logoW: "564",
+        logoH: "197",
+        phoneHref: "+74952122122",
+        email: "info@cominvest-akmt.ru",
+        emailHref: "mailto:info@cominvest-akmt.ru",
+      },
+      {
+        title: "ООО «АМКО»",
+        city: "125315, г. Москва,",
+        street: "ул. Маршала Прошлякова, д. 5, корп. 4",
+        link: "#",
+        longitude: "55.78536525142802",
+        latitude: "37.39360104232787",
+        logo: "img/content/dealers/logo-amkodor.png",
+        logoW: "221",
+        logoH: "56",
+        phone: "+7 (915) 439 19 19",
+        phoneHref: "+79154391919",
+        email: "amkodor-moskva@mail.ru",
+        emailHref: "mailto:amkodor-moskva@mail.ru",
+      },
+      {
+        title: "ООО «АВТО-АЛЬЯНС»",
+        city: "125315, г. Москва,",
+        street: "ул. Большая почтовая, д. 26в, стр. 1",
+        link: "#",
+        longitude: "55.778477349162884",
+        latitude: "37.69890472090148",
+        logo: "img/content/dealers/logo-autoalyans.png",
+        logoW: "170",
+        logoH: "45",
+        phone: "+7 (495) 660-51-64",
+        phoneHref: "+74956605164",
+        email: "zakaz@AutoOpt.ru",
+        emailHref: "mailto:zakaz@AutoOpt.ru",
+      },
+      {
+        title: "ООО «МЕРКАТОР КАЛУГА»",
+        city: "248033, Калужская область, г. Калуга,",
+        street: "ул. Энергетиков, д. 2",
+        link: "#",
+        longitude: "54.478911570162055",
+        latitude: "36.23007949999996",
+        logo: "img/content/dealers/logo-merkator.png",
+        logoW: "726",
+        logoH: "378",
+        phone: "+7 (4842) 20-01-63",
+        phoneHref: "+74842200163",
+        email: "kaluga@merkatorgroup.ru",
+        emailHref: "mailto:kaluga@merkatorgroup.ru",
+      }
+    ]
+
+  .dealers-list
+    .dealers-list__header
+      h2.title.title--h2.pseudo.pseudo--line.fir Дилеры
+    ul.dealers-list__list
+      each firm, index in firms.length ? firms : ['Загрузите массив с данными']
+        if index == 0
+          li(data-longitude=firm.longitude data-latitude=firm.latitude data-logo=firm.logo data-phone=firm.phone data-phoneHref=firm.phoneHref data-email=firm.email data-emailHref=firm.emailHref data-logoh=firm.logoH data-logow=firm.logoW).dealers-list__item.is-active
+            .dealers-list__lines
+              span
+              span
+              span
+            h3.dealers-list__title.fir
+              a.dealers-list__link(href=firm.link aria-label="Нажмите для уточнения адреса")=firm.title
+            address.dealers-list__address.fir
+              span=firm.city
+              span=firm.street
+            +icon("icon-arrow-right", "12px", "17px").dealers-list__icon
+        else
+          li(data-longitude=firm.longitude data-latitude=firm.latitude data-logo=firm.logo data-phone=firm.phone data-phoneHref=firm.phoneHref data-email=firm.email data-emailHref=firm.emailHref data-logoh=firm.logoH data-logow=firm.logoW).dealers-list__item
+            .dealers-list__lines
+              span
+              span
+              span
+            h3.dealers-list__title.fir
+              a.dealers-list__link(href=firm.link aria-label="Нажмите для уточнения адреса")=firm.title
+            address.dealers-list__address.fir
+              span=firm.city
+              span=firm.street
+            +icon("icon-arrow-right", "12px", "17px").dealers-list__icon
+

@@ -1,0 +1,109 @@
+-
+  const productsTitleParameters = {
+    lvl: 2,
+    text: "Наша продукция",
+    classes: "title--main",
+    isTitleNeed: true
+  };
+-
+  const bigCardTitle = {
+    lvl: 3,
+    text: "Дисковые щетки",
+    classes: "title--products-h3",
+    isTitleNeed: true
+  };
+
+mixin products()
+  -
+    const bigCard = {
+      path: "products",
+      image: "1",
+      format: "png",
+      width: "257",
+      height: "260",
+      altText: ""
+    };
+
+  -
+    const cardListProps = [
+      {
+        path: "products",
+        image: "2",
+        format: "png",
+        width: "328",
+        height: "104",
+        altText: "",
+        text: "стальной подкат",
+        href: "steel-roll.html",
+      },
+      {
+        path: "products",
+        image: "3",
+        format: "png",
+        width: "314",
+        height: "134",
+        altText: "",
+        text: "полипро-пиленовый ворс",
+        href: "polypropylene-pile.html",
+      },
+      {
+        path: "products",
+        image: "4",
+        format: "png",
+        width: "211",
+        height: "207",
+        altText: "",
+        text: "проставочные кольца",
+        href: "spacer-rings.html",
+      },
+      {
+        path: "products",
+        image: "5",
+        format: "png",
+        width: "249",
+        height: "181",
+        altText: "",
+        text: "лотковые щетки",
+        href: "tray-brushes.html",
+      },
+      {
+        path: "products",
+        image: "6",
+        format: "png",
+        width: "298",
+        height: "242",
+        altText: "",
+        text: "тупсы",
+        href: "tups.html",
+      },
+      {
+        path: "products",
+        image: "7",
+        format: "png",
+        width: "190",
+        height: "190",
+        altText: "",
+        text: "поламидная щетка",
+        href: "polyamide-brush.html",
+      },
+    ]
+
+  section.products
+    .container.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+      +title(productsTitleParameters)
+      .products__main-card.fir
+        +picture(bigCard.path, bigCard.image, bigCard.format, bigCard.width, bigCard.height, bigCard.altText)
+        +title(bigCardTitle)
+        ul.products__wrapper
+          li
+            a(href="disc-brushes-with-metal-crimp-ring.html") Дисковые щетки с&nbsp;обжимным металлическим кольцом
+          li
+            a(href="bent-profile-spacerless-disc-brushes.html") Беспроставочные дисковые щетки гнутого профиля типа &laquo;би-лайн&raquo;
+          li
+            a(href="spacerless-straight-profile-disc-brushes.html") Беспроставочные дисковые щетки прямого профиля
+          li
+            a(href="shaped-disc-brushes-with-a-shaped-metal-ring.html") Беспроставочные дисковые щетки гнутого профиля с&nbsp;обжимным металлическим кольцом
+      ul.products__list
+        each card in cardListProps
+          li.products__item
+            +product-card(card)

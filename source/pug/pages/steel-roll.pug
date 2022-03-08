@@ -1,0 +1,80 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Стальной подкат" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "steel-roll" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const steelRollTitle = {
+      lvl: 2,
+      text: "Стальной подкат",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const steelRollSubtitle = {
+      lvl: 3,
+      text: "Изготавливается из&nbsp;высокоуглеродистой пружинной стали. Применяется для набивки лотковых щеток и&nbsp;изготовления сменных тупс для коммунальной уборочной техники.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const  steelRollImageParameters = {
+      path: "content/shop",
+      image: "steel-roll",
+      format: "png",
+      width: "1500",
+      height: "466",
+      alt: "Стопка стального подката"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(steelRollImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(steelRollTitle)
+          +title(steelRollSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Сечение подката
+              .box-description__right
+                p 3&times;0,6&nbsp;мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Длина ворса
+              .box-description__right
+                p 600-700&nbsp;мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Достоинствами полипропиленового ворса являются:
+              .box-description__right
+                p жесткость, износостойкость
+
+
+
+      .grid__cell
+        +global-slider(steelRollSliderData)
+
+
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals

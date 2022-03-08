@@ -1,0 +1,88 @@
+.main-swiper {
+  width: size(387px);
+  height: size(457px);
+  position: relative;
+  margin: 0;
+  cursor: grab;
+
+  @include vp-1919 {
+    width: 387px;
+    height: 457.88px;
+  }
+
+  @include vp-1279 {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  @media (max-width: 1150px) {
+    max-width: 380px;
+  }
+
+  @media (max-width: 1090px) {
+    max-width: 350px;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include vp-767 {
+    height: 355px;
+  }
+}
+
+.main-swiper__slide img {
+  width: size(387px);
+  height: size(457.88px);
+  display: block;
+  object-fit: cover;
+
+  @include vp-1439 {
+    width: 413px;
+  }
+
+  @include vp-1279 {
+    width: 100%;
+    height: 471px;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.main-swiper__pagination {
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 4px;
+}
+
+.main-swiper__pagination button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+
+  @include vp-1023 {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.main-swiper__shadow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(#aacd7c, 0.9), rgba(#aacd7c, 0.1));
+  z-index: 10;
+}

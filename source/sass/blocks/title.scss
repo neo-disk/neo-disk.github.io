@@ -1,0 +1,103 @@
+.title {
+  color: inherit;
+  position: relative;
+
+  &--main {
+    margin-top: 0;
+    padding-top: 60px;
+    color: $color-olivine;
+    font-size: size(85px);
+    line-height: size(70px);
+    margin-bottom: 40px;
+    font-weight: 400;
+
+    @include vp-1023 {
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 45px;
+      margin-bottom: 60px;
+      margin-left: 0;
+    }
+
+    @include vp-449 {
+      font-size: 40px;
+    }
+
+    @include vp-374 {
+      font-size: 30px;
+    }
+  }
+
+  &--products-h3 {
+    font-weight: 700;
+    font-size: size(19px);
+    line-height: size(21px);
+    color: $color-default-white;
+    padding-bottom: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    @include vp-899 {
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 19px;
+    }
+
+    @include vp-374 {
+      font-size: 19px;
+    }
+  }
+
+  &--socials-h3 {
+    font-size: size(26px);
+    line-height: size(21px);
+    color: $color-mantis;
+    font-weight: 700;
+
+    @include vp-767 {
+      font-size: 26px;
+    }
+  }
+
+  &--line {
+    &::before {
+      content: "";
+      position: absolute;
+      left: size(-20px);
+      top: size(80px);
+      display: block;
+      width: size(2px);
+      height: size(32px);
+      background: $mantis-to-top;
+    }
+
+    @include vp-1023 {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &--h2 {
+    font-size: size(40px);
+    line-height: size(42px);
+    font-weight: 400;
+    color: $color-mantis;
+
+    @include vp-767 {
+      font-size: size(30px);
+      line-height: size(32px);
+    }
+  }
+
+  &--h3 {
+    font-size: size(22px);
+    line-height: size(26px);
+    font-weight: 600;
+    color: $color-limeade;
+  }
+}

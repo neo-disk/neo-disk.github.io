@@ -1,0 +1,74 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Проставочные кольца" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "spacer-rings" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const spacerRingsTitle = {
+      lvl: 2,
+      text: "Проставочные кольца",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const spacerRingsSubtitle = {
+      lvl: 3,
+      text: "Проставочные кольца требуются при использовании дисковых щеток с&nbsp;металлическим сердечником. Они помогают достичь необходимого расстояния между соседними щеточными дисками. Это расстояние позволяет, во-первых, обеспечивать нужный уровень густоты ворса, во&nbsp;вторых, не&nbsp;превышать максимальных весовых норм механизма. Комплект проставочных колец подбирается исходя из&nbsp;размера внутреннего диаметра используемых щеточных дисков.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const spacerRingsImageParameters = {
+      path: "content/shop",
+      image: "spacer-rings",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Проставочные кольца"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(spacerRingsImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(spacerRingsTitle)
+          +title(spacerRingsSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Диаметр кольца
+              .box-description__right
+                p 78&nbsp;мм, 101&nbsp;мм, 110&nbsp;мм, 117&nbsp;мм, 120&nbsp;мм, 127&nbsp;мм, 130&nbsp;мм, 164&nbsp;мм, 180&nbsp;мм, 203&nbsp;мм, 254&nbsp;мм, 280&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал изготовления
+              .box-description__right
+                p Стальная полоса (лента) толщиной 1-1,2&nbsp;мм.
+
+
+
+      .grid__cell
+        +global-slider(spacerRingsSliderData)
+
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals

@@ -1,0 +1,73 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Полиамидная щетка" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "polyamide-brush" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const polyamideBrushTitle = {
+      lvl: 2,
+      text: "Полиамидная щетка",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const polyamideBrushSubtitle = {
+      lvl: 3,
+      text: "Полиамидная нить обладает такими свойствами как мягкость, эластичность и&nbsp;морозоустойчивость, что позволяет ей&nbsp;удалять загрязнения с&nbsp;дорожных ограждений и&nbsp;стен тоннелей, не&nbsp;повреждая конструктивные элементы, установленные на&nbsp;них.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const  polyamideBrushImageParameters = {
+      path: "content/shop",
+      image: "polyamide-brush",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Полиамидная щетка синего цвета"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid
+      .grid__cell.shop__image.shop.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(polyamideBrushImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(polyamideBrushTitle)
+          +title(polyamideBrushSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Внутренний диаметр кольца
+              .box-description__right
+                p 78&nbsp;мм, 101&nbsp;мм, 110&nbsp;мм, 117&nbsp;мм, 120&nbsp;мм, 127&nbsp;мм, 130&nbsp;мм, 164&nbsp;мм, 180&nbsp;мм, 203&nbsp;мм, 254&nbsp;мм, 280&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал ворса
+              .box-description__right
+                p Полиамидная нить
+
+
+
+      .grid__cell
+        +global-slider(polyamideSliderData)
+
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+
+block modals

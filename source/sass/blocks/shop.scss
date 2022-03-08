@@ -1,0 +1,33 @@
+.shop__content {
+  & > .title--h2 {
+    margin: 0;
+    margin-bottom: size(45px);
+    color: $color-mantis;
+
+    @include vp-1023 {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  & > .title--h3 {
+    margin: 0;
+    margin-bottom: size(56px);
+    color: $color-limeade;
+
+    @include vp-1023 {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.shop__image {
+  background-color: $color-gin;
+
+  @include vp-1023 {
+    max-height: size(400px);
+  }
+}

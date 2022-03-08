@@ -1,0 +1,25 @@
+.container {
+  /* --- Переменная для значений padding'ов по умолчанию ---  */
+  --container-default-padding: 40px;
+
+  width: 100%;
+  max-width: size(1920px);
+  margin: 0 auto;
+  padding: 0 var(--container-default-padding);
+
+  @include vp-1919 {
+    max-width: 1920px;
+  }
+
+  @include vp-1439 {
+    --container-default-padding: 32px;
+  }
+
+  @include vp-1023 {
+    --container-default-padding: 24px;
+  }
+
+  @include vp-767 {
+    --container-default-padding: 16px;
+  }
+}

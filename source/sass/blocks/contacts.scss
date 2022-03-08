@@ -1,0 +1,151 @@
+.contacts {
+  background-color: $color-gin;
+  padding: size(27px) 0 size(50px);
+
+  .container {
+    max-width: size(1200px);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include vp-1279 {
+      max-width: 100%;
+      padding-left: size(32px);
+      padding-right: size(32px);
+    }
+
+    @include vp-767 {
+      padding-left: size(16px);
+      padding-right: size(16px);
+    }
+  }
+}
+
+.contacts__container {
+  display: flex;
+  align-items: center;
+}
+
+.contacts__logo {
+  margin-right: size(250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.contacts__logo-circle {
+  width: size(130px);
+  height: size(130px);
+}
+
+.contacts__logo-text {
+  width: size(156px);
+  height: size(39px);
+}
+
+.contacts__addition {
+  padding-top: size(28px);
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.contacts__text {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: size(19px);
+  margin-bottom: size(2px);
+  letter-spacing: 0.05em;
+  padding-bottom: size(1px);
+
+  svg {
+    margin-right: size(12px);
+    letter-spacing: 0.05em;
+    width: size(30px);
+    height: size(30px);
+  }
+
+  @include vp-767 {
+    justify-content: center;
+  }
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: size(20px);
+  color: $color-lima;
+
+  @media (max-width: $vp-1024) {
+    flex-direction: column;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-right: size(26px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color opacity $trans-default;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    margin-right: size(10px);
+    width: size(17px);
+    height: size(17px);
+    transition: opacity $trans-default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:focus svg,
+    &:hover svg {
+      opacity: 0.7;
+      color: $color-lima;
+    }
+  }
+
+  &:active svg {
+    opacity: 0.5;
+  }
+
+  @include vp-1023 {
+    margin: 0;
+  }
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  color: $color-lima;
+  font-size: size(15px);
+  font-weight: 600;
+  transition: color opacity $trans-default;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}

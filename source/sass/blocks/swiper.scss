@@ -1,0 +1,76 @@
+.swiper {
+  height: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: $color-default-white;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-limeade;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: size(30px);
+  height: size(30px);
+  border-radius: 50%;
+  background-color: $color-default-white;
+  transition: background $trans-default;
+  top: 50%;
+  transform: translateY(30%);
+  outline: none;
+  box-shadow: 0 0 5px 5px rgba($color-default-black, 0.05);
+
+  &::after {
+    font-size: size(14px);
+    font-weight: 700;
+    color: $color-mantis;
+    transition: color $trans-default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      background-color: $color-limeade;
+
+      &::after {
+        color: $color-default-white;
+      }
+    }
+  }
+}
+
+.swiper-button-next {
+  right: 30px;
+
+  &::after {
+    padding-left: 3px;
+  }
+}
+
+.swiper-button-prev {
+  left: 30px;
+  padding-right: 3px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 30px;
+}
+
+.swiper-pagination-new {
+  margin-bottom: 25px;
+}
+
+.global-slider {
+  max-height: size(650px);
+}

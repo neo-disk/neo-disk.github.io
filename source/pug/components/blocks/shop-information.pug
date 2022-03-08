@@ -1,0 +1,19 @@
+-
+  const shopProductInformationTitle = {
+    lvl: 2,
+    text: "Дисковые щетки с обжимным металлическим кольцом",
+    classes: "title--h2 pseudo pseudo--line fir",
+    isTitleNeed: true
+  }
+
+  const shopProductInformationSubtitle = {
+    lvl: 3,
+    text: "Один из первых видов дисковых щеток, до сих пор пользуется большой популярностью у многих организаций, вследствие чего их часто называют: классический щеточный диск.",
+    classes: "title--h3 pseudo pseudo--info fir",
+    isTitleNeed: true
+  }
+
+mixin shop-information
+  +title(shopProductInformationTitle)
+  +title(shopProductInformationSubtitle)
+  +box-description()

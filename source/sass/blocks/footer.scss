@@ -1,0 +1,84 @@
+.footer {
+  padding: 0 0 200px 0;
+
+  background-color: $color-white-smoke;
+
+  @include vp-1023 {
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 40px;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  flex-wrap: wrap;
+  width: size(1201px);
+  font-size: size(14px);
+  line-height: 1.5;
+  color: $color-dim-gray;
+  padding-top: 45px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include vp-1439 {
+    justify-content: space-between;
+    grid-template-columns: max-content max-content max-content max-content;
+  }
+
+  @include vp-1279 {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.footer__container p {
+  padding: 0;
+  margin: 0;
+  max-width: size(300px);
+
+  @include vp-1279 {
+    max-width: 200px;
+  }
+
+  @include vp-1023 {
+    max-width: 100%;
+  }
+}
+
+.footer__container p:nth-of-type(4n-2) {
+  margin-left: 108px;
+
+  @include vp-1439 {
+    margin-left: 0;
+  }
+}
+
+.footer__container p:nth-of-type(4n-1) {
+  margin-left: 213px;
+
+  @include vp-1439 {
+    margin-left: 0;
+  }
+}
+
+.footer__container p:nth-of-type(4n) {
+  margin-left: 84px;
+
+  @include vp-1439 {
+    margin-left: 0;
+  }
+}
