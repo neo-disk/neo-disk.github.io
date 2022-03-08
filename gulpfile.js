@@ -17,12 +17,14 @@ const pug = require('gulp-pug');
 const cached = require('gulp-cached');
 const gcmq = require('gulp-group-css-media-queries');
 
+const folder = process.env.NODE_ENV === 'production' ? 'build' : 'dev_build';
+
 const pugToHtml = () => {
   return gulp.src('source/pug/pages/*.pug')
       .pipe(plumber())
       .pipe(pug({ pretty: true }))
       .pipe(cached('pug'))
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest(`${folder}`));
 };
 
 const css = () => {
@@ -34,18 +36,18 @@ const css = () => {
         grid: true,
       })]))
       .pipe(gcmq()) // выключите, если в проект импортятся шрифты через ссылку на внешний источник
-      .pipe(gulp.dest('build/css'))
+      .pipe(gulp.dest(`${folder}/css`))
       .pipe(csso())
       .pipe(rename('style.min.css'))
       .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('build/css'))
+      .pipe(gulp.dest(`${folder}/css`))
       .pipe(server.stream());
 };
 
 const js = () => {
   return gulp.src(['source/js/main.js'])
       .pipe(webpackStream(webpackConfig))
-      .pipe(gulp.dest('build/js'))
+      .pipe(gulp.dest(`${folder}/js`))
 };
 
 const svgo = () => {
@@ -66,26 +68,26 @@ const sprite = () => {
   return gulp.src('source/img/sprite/*.svg')
       .pipe(svgstore({inlineSvg: true}))
       .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('build/img'));
+      .pipe(gulp.dest(`${folder}/img`));
 };
 
 const copySvg = () => {
   return gulp.src('source/img/**/*.svg', {base: 'source'})
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest(`${folder}`));
 };
 
 const copyImages = () => {
   return gulp.src('source/img/**/*.{png,jpg,webp}', {base: 'source'})
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest(`${folder}`));
 };
 
 const optimizeImages = () => {
-  return gulp.src('build/img/**/*.{png,jpg}')
+  return gulp.src(`${folder}/img/**/*.{png,jpg}`)
       .pipe(imagemin([
         imagemin.optipng({optimizationLevel: 3}),
         imagemin.mozjpeg({quality: 75, progressive: true}),
       ]))
-      .pipe(gulp.dest('build/img'));
+      .pipe(gulp.dest(`${folder}/img`));
 };
 
 // Используйте отличное от дефолтного значение root, если нужно обработать отдельную папку в img,
@@ -113,16 +115,16 @@ const copy = () => {
   ], {
     base: 'source',
   })
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest(`${folder}`));
 };
 
 const clean = () => {
-  return del('build');
+  return del(`${folder}`);
 };
 
 const syncServer = () => {
   server.init({
-    server: 'build/',
+    server: `${folder}/`,
     notify: false,
     open: true,
     cors: true,

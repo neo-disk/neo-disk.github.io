@@ -5,6 +5,8 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
+const folder = isProd ? 'build' : 'dev_build';
+
 module.exports = {
   context: path.resolve(__dirname, 'source'),
   mode: 'development',
@@ -15,10 +17,10 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   output: {
     filename: '[name].min.js',
-    path: path.resolve(__dirname, 'build/js'),
+    path: path.resolve(__dirname, `${folder}/js`),
   },
   optimization: {
-    minimize: isDev ? false : true,
+    minimize: !isDev,
   },
   module: {
     rules: [
