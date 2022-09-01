@@ -55,26 +55,31 @@ block main
               .box-description__left
                 p Сечение ворса
               .box-description__right
-                p 1,5-3,5&nbsp;мм.
+                p 1,5-2,8&nbsp;мм.
             .box-description__item.fir.d-400
               .box-description__left
                 p Длина ворса
               .box-description__right
                 p 500-900&nbsp;мм
-            .box-description__item.fir.d-400
-              .box-description__left
-                p Достоинствами полипропиленового ворса являются:
-              .box-description__right
-                p водостойкость, морозостойкость, износостойкость
+            //.box-description__item.fir.d-400
+            //  .box-description__left
+            //    p Достоинствами полипропиленового ворса являются:
+            //  .box-description__right
+            //    p водостойкость, морозостойкость, износостойкость
 
 
 
       .grid__cell
         +global-slider(polypropylenePileSliderData)
 
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Достоинствами полипропиленового ворса являются: водостойкость, морозостойкость, износостойкость.
 
 
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
+
+    //-
+    //-
 
 block modals

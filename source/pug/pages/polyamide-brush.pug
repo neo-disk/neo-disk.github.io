@@ -22,9 +22,9 @@ block variables
 
     const polyamideBrushSubtitle = {
       lvl: 3,
-      text: "Полиамидная нить обладает такими свойствами как мягкость, эластичность и&nbsp;морозоустойчивость, что позволяет ей&nbsp;удалять загрязнения с&nbsp;дорожных ограждений и&nbsp;стен тоннелей, не&nbsp;повреждая конструктивные элементы, установленные на&nbsp;них.",
+      text: "",
       classes: "title--h3 pseudo pseudo--info fir",
-      isTitleNeed: true
+      isTitleNeed: false
     }
 
     const  polyamideBrushImageParameters = {
@@ -72,7 +72,14 @@ block main
       .grid__cell
         +global-slider(polyamideSliderData)
 
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Полиамидная нить обладает такими свойствами как мягкость, эластичность и&nbsp;морозоустойчивость, что позволяет ей&nbsp;удалять загрязнения с&nbsp;дорожных ограждений и&nbsp;стен тоннелей, не&nbsp;повреждая конструктивные элементы, установленные на&nbsp;них.
+
+
+
+    //-
+    //-
 
 block modals
