@@ -126,7 +126,15 @@
   font-weight: 600;
 }
 
-.about-us__inner p {
+.about-us__inner ul {
+  padding-left: 14px;
+}
+
+.about-us__inner li {
   margin: 0;
   margin-bottom: 10px;
+}
+
+.about-us__inner li::marker {
+  color: $color-limeade;
 }
