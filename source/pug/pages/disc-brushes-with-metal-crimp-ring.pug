@@ -1,0 +1,26 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Щетка дисковая с металлическим сердечником" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "disc-brushes-with-metal-crimp-ring" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    +shop()
+
+
+    //-
+    //-
+
+block modals

@@ -1,19 +1,25 @@
 .container {
+  /* --- Переменная для значений padding'ов по умолчанию ---  */
+  --container-default-padding: 40px;
+
   width: 100%;
-  max-width: 1400px;
-  min-width: 320px;
+  max-width: size(1920px);
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 var(--container-default-padding);
 
-  @include viewport--md {
-    padding: 0 40px;
+  @include vp-1919 {
+    max-width: 1920px;
   }
 
-  @include viewport--sm {
-    padding: 0 20px;
+  @include vp-1439 {
+    --container-default-padding: 32px;
   }
 
-  &--no-padding {
-    padding: 0;
+  @include vp-1023 {
+    --container-default-padding: 24px;
+  }
+
+  @include vp-767 {
+    --container-default-padding: 16px;
   }
 }

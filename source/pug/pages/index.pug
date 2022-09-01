@@ -1,65 +1,24 @@
-extends ../base/layout
-
-include ../mixins/basic/picture
-include ../components/promo-slider
-include ../components/navigation-arrow
-include ../components/advantage
-include ../components/product-card
-
-block data
-  include ../data/promo
-  include ../data/advantagesList
-  include ../data/productsList
+extends ../components/base/layout
 
 block variables
-  - var title = "НЭО ДИСК — Главная"
-  - var wrapperMod = ""
-  - var hasHeader = true
-  - var headerMod = ""
-  - var hasFooter = true
-  - var footerMod = ""
-  - var currentPage = "index" //- для остальных страниц пишем либо пустую строку, либо индекс
+  - const title = "НэоДиск - чистый город" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = "index" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const contactsNeeded = false
 
 block main
   main
-    section.promo
-      .promo__background
-      +promoSlider(promoData)
-    section.about
-      .container.about__wrapper
-        .about__description
-          h2.about__description-title о нас
-          p
-            |Мы являемся одним из крупнейших производителей щеток для коммунальной уборочной техники различных типов размеров и конфигураций,
-            |которые используются для транспортных средств как отечественного, так и зарубежного производства.
-          p
-            |Одним из важнейших   аспектов нашей деятельности является безопасность и качество продукции.
-            |При производстве мы используем только качественное сырье от проверенных поставщиков.
-            |В лаборатории постоянно проводится контроль качества поставляемого сырья и качества произведенной продукции.
-            |Также придается большое значение расширению ассортимента выпускаемой продукции в соответствии с увеличением различных типов новой отечественной
-            |и зарубежной уборочной техники.
-        .about__advantages
-          h2.about__advantages-title основы нашего успеха
-          ul.about__advantages-list
-            each item in advantagesList
-              li.about__advantages-item
-                +advantage(item.iconName, item.iconWidth, item.iconHeight, item.text)
-    section.products
-      .container.container--no-padding
-        .products__background
-          +picture("content/main", "blue-brush", "blue-brush-sm", "png", "1100", "1100", "Изображение диска")
-        .container
-          ul.products__list
-            each item in productsList
-              li.products__item
-                +productCard(item)
+    //-
+    //-
+    +intro()
+    +about-us()
+    +products()
+    +socials()
+    +main-map()
 
-block scripts
-  script(src="js/vendor.min.js")
-  script(src="js/main.min.js")
-
-//- block modals
-//-  +modal("modal--feedback")
-//-    +modal-feedback()
-//-  +modal("modal--success modal--no-scale modal--fit-content")
-//-    +modal-success()
+block modals
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=8ae345f3-fa1c-4989-abc6-3d883df83c02&lang=ru_RU" rel="noopener")

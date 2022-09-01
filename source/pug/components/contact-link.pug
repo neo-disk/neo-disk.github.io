@@ -1,9 +1,0 @@
-mixin contact-link(type, data, classMode)
-  if(type==="mail")
-    a(class= (classMode) ? "contact-link contact-link--" + classMode : "contact-link", href=`mailto:${data.replace(/\s+/g, '')}`)
-      +icon("icon-mail", 16, 13)(class="contact-link__icon contact-link__icon--mail", aria-label=`Почта: ${data}`)
-      span.contact-link__text= data
-  if(type==="phone")
-    a(class= (classMode) ? "contact-link contact-link--" + classMode : "contact-link", href=`tel:${data.replace(/\s+|\(|\)|-/g, '')}`)
-      +icon("icon-phone", 16, 13)(class="contact-link__icon contact-link__icon--phone", aria-label=`Телефон: ${data}`)
-      span.contact-link__text= data

@@ -1,0 +1,81 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Стальной подкат" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "steel-roll" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const steelRollTitle = {
+      lvl: 2,
+      text: "Стальной подкат",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const steelRollSubtitle = {
+      lvl: 3,
+      text: "",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: false
+    }
+
+    const  steelRollImageParameters = {
+      path: "productPage/steel-roll",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "466",
+      alt: "Стопка стального подката"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(steelRollImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(steelRollTitle)
+          +title(steelRollSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Сечение подката
+              .box-description__right
+                p 0,6&nbsp;мм&times;3,0&nbsp;мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Длина ворса
+              .box-description__right
+                p 500-700&nbsp;мм
+
+
+
+      .grid__cell
+        +global-slider(steelRollSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Изготавливается из высокоуглеродистой пружинной стали. Применяется для набивки лотковых щеток и изготовления сменных тупс для коммунальной уборочной техники.
+
+
+
+
+    //-
+    //-
+
+block modals

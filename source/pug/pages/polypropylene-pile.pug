@@ -1,55 +1,86 @@
-extends ../base/layout
-
-include ../mixins/basic/picture
-include ../components/product
-
-block data
-  -
-    const product = {
-      images: [
-        {
-          imageName: "polypropylene-pile",
-          imageWidth: "718",
-          imageHeight: "675",
-          imageAlt: "Ворс полипропиленовый",
-        }
-      ],
-      title: "Ворс полипропиленовый",
-      description: [
-        "Изготавливается из морозостойкого полипропилена. Применяется для изготовления дисковых, лотковых щеток и сменных тупс для коммунальной уборочной техники."
-      ],
-      list: [
-        {
-          title: "Достоинствами полипропиленового ворса являются:",
-          elements: [
-          "водостойкость",
-          "морозостойкость",
-          "износостойкость."
-        ]
-        }
-      ],
-      details: [
-        {feature: "Сечение ворса", value: "1,5-3,5 мм"},
-        {feature: "Длина ворса", value: "По запросу"}
-      ]
-    }
+extends ../components/base/layout
 
 block variables
-  - var title = "Ворс полипропиленовый"
-  - var wrapperMod = ""
-  - var hasHeader = true
-  - var headerMod = ""
-  - var hasFooter = true
-  - var footerMod = ""
-  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+  - const title = "Ворс полипропиленовый" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "polypropylene-pile" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const polypropylenePileTitle = {
+      lvl: 2,
+      text: "Ворс полипропиленовый",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const polypropylenePileSubtitle = {
+      lvl: 3,
+      text: "Изготавливается из&nbsp;морозостойкого полипропилена. Применяется для изготовления дисковых, лотковых щеток и&nbsp;сменных тупс для коммунальной уборочной техники.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const polypropylenePileImageParameters = {
+      path: "productPage/polypropylene-pile",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Ворс полипропиленовый зеленого цвета"
+    }
 
 block main
   main
-    section.product
-      .container.container--no-padding
-        +product(product)
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid
+      .grid__cell.shop__image.shop.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(polypropylenePileImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(polypropylenePileTitle)
+          +title(polypropylenePileSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Сечение ворса
+              .box-description__right
+                p 1,5-2,8&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Длина ворса
+              .box-description__right
+                p 500-900&nbsp;мм
+            //.box-description__item.fir.d-400
+            //  .box-description__left
+            //    p Достоинствами полипропиленового ворса являются:
+            //  .box-description__right
+            //    p водостойкость, морозостойкость, износостойкость
 
 
-block scripts
-  script(src="js/vendor.min.js")
-  script(src="js/main.min.js")
+
+      .grid__cell
+        +global-slider(polypropylenePileSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Достоинствами полипропиленового ворса являются:
+              strong водостойкость, морозостойкость, износостойкость.
+
+
+
+    //-
+    //-
+
+block modals

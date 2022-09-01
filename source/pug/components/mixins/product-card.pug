@@ -1,0 +1,5 @@
+mixin product-card(cardImageProps)
+  a(href=cardImageProps.href).product-card.fir
+    .product-card__wrapper
+      +picture(cardImageProps.path, cardImageProps.image, cardImageProps.format, cardImageProps.width, cardImageProps.height, cardImageProps.altText)
+    p.product-card__text!=cardImageProps.text

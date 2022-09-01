@@ -1,0 +1,35 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Партнёры — Неодиск" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const currentPage = "dealers" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+
+  -
+    var phone = {
+      href: "tel:+74997695724",
+      text: "+7 (499) 769-57-24"
+    }
+    var mail = {
+      href: "mailto:Pkf_info@bk.ru",
+      text: "Pkf_info@bk.ru"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете наших дилеров
+
+    +dealers()
+
+    //-
+    //-
+
+block modals
+
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=8ae345f3-fa1c-4989-abc6-3d883df83c02&lang=ru_RU" rel="noopener")

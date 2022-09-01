@@ -1,39 +1,148 @@
+// @font-face {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-family: "Rouble";
+
+//   font-display: swap;
+//   src:
+//     url("../fonts/rouble.woff2") format("woff2"),
+//     url("../fonts/rouble.woff") format("woff");
+// }
+
+/*
+==============================================================================================================
+---------------------------------------- Шрифт «Promixima Nova» ----------------------------------------
+==============================================================================================================
+*/
+
+// *** жирность «Thin», italic ***
 @font-face {
   font-family: "Proxima Nova";
-  font-weight: 400;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 100;
   font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-ThinIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-ThinIt.woff") format("woff");
+}
+
+// *** жирность «Light» ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-Light.woff2") format("woff2"),
+    url("../fonts/ProximaNova-Light.woff") format("woff");
+}
+
+// *** жирность «Light», italic ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-LightIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-LightIt.woff") format("woff");
+}
+
+// *** жирность «Regular» ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+
   src:
     url("../fonts/ProximaNova-Regular.woff2") format("woff2"),
     url("../fonts/ProximaNova-Regular.woff") format("woff");
 }
 
+// *** жирность «Regular», italic ***
 @font-face {
   font-family: "Proxima Nova";
-  font-weight: 600;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 400;
   font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-RegularIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-RegularIt.woff") format("woff");
+}
+
+// *** жирность «Semibold» ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+
   src:
     url("../fonts/ProximaNova-Semibold.woff2") format("woff2"),
     url("../fonts/ProximaNova-Semibold.woff") format("woff");
 }
 
+// *** жирность «Semibold», italic ***
 @font-face {
   font-family: "Proxima Nova";
-  font-weight: 700;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 600;
   font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-SemiboldIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-SemiboldIt.woff") format("woff");
+}
+
+// *** жирность «Bold» ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+
   src:
     url("../fonts/ProximaNova-Bold.woff2") format("woff2"),
     url("../fonts/ProximaNova-Bold.woff") format("woff");
 }
 
+// *** жирность «Bold», italic ***
 @font-face {
   font-family: "Proxima Nova";
-  font-weight: 900;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 700;
   font-display: swap;
+
   src:
-    url("../fonts/ProximaNova-Black.woff2") format("woff2"),
-    url("../fonts/ProximaNova-Black.woff") format("woff");
+    url("../fonts/ProximaNova-BoldIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-BoldIt.woff") format("woff");
+}
+
+// *** жирность «ExtraBold» ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-Extrabld.woff2") format("woff2"),
+    url("../fonts/ProximaNova-Extrabld.woff") format("woff");
+}
+
+// *** жирность «ExtraBold», italic ***
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+
+  src:
+    url("../fonts/ProximaNova-ExtrabldIt.woff2") format("woff2"),
+    url("../fonts/ProximaNova-ExtrabldIt.woff") format("woff");
 }

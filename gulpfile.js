@@ -15,13 +15,16 @@ const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const pug = require('gulp-pug');
 const cached = require('gulp-cached');
+const gcmq = require('gulp-group-css-media-queries');
+
+const folder = process.env.NODE_ENV === 'production' ? 'build' : 'dev_build';
 
 const pugToHtml = () => {
   return gulp.src('source/pug/pages/*.pug')
       .pipe(plumber())
       .pipe(pug({ pretty: true }))
       .pipe(cached('pug'))
-      .pipe(gulp.dest('docs'));
+      .pipe(gulp.dest(`${folder}`));
 };
 
 const css = () => {
@@ -32,18 +35,19 @@ const css = () => {
       .pipe(postcss([autoprefixer({
         grid: true,
       })]))
-      .pipe(gulp.dest('docs/css'))
+      .pipe(gcmq()) // выключите, если в проект импортятся шрифты через ссылку на внешний источник
+      .pipe(gulp.dest(`${folder}/css`))
       .pipe(csso())
       .pipe(rename('style.min.css'))
       .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('docs/css'))
+      .pipe(gulp.dest(`${folder}/css`))
       .pipe(server.stream());
 };
 
 const js = () => {
   return gulp.src(['source/js/main.js'])
       .pipe(webpackStream(webpackConfig))
-      .pipe(gulp.dest('docs/js'))
+      .pipe(gulp.dest(`${folder}/js`))
 };
 
 const svgo = () => {
@@ -64,12 +68,63 @@ const sprite = () => {
   return gulp.src('source/img/sprite/*.svg')
       .pipe(svgstore({inlineSvg: true}))
       .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('docs/img'));
+      .pipe(gulp.dest(`${folder}/img`));
 };
 
-const syncserver = () => {
+const copySvg = () => {
+  return gulp.src('source/img/**/*.svg', {base: 'source'})
+      .pipe(gulp.dest(`${folder}`));
+};
+
+const copyImages = () => {
+  return gulp.src('source/img/**/*.{png,jpg,webp}', {base: 'source'})
+      .pipe(gulp.dest(`${folder}`));
+};
+
+const optimizeImages = () => {
+  return gulp.src(`${folder}/img/**/*.{png,jpg}`)
+      .pipe(imagemin([
+        imagemin.optipng({optimizationLevel: 3}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+      ]))
+      .pipe(gulp.dest(`${folder}/img`));
+};
+
+// Используйте отличное от дефолтного значение root, если нужно обработать отдельную папку в img,
+// а не все изображения в img во всех папках.
+
+// root = '' - по дефолту webp добавляются и обналяются во всех папках в source/img/
+// root = 'content/' - webp добавляются и обновляются только в source/img/content/
+
+const createWebp = () => {
+  const root = '';
+  return gulp.src(`source/img/${root}**/*.{png,jpg}`)
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest(`source/img/${root}`));
+};
+
+const copy = () => {
+  return gulp.src([
+    'source/fonts/**',
+    'source/img/**',
+    'source/data/**',
+    'source/favicons/**',
+    'source/video/**',
+    'source/downloads/**',
+    'source/*.php',
+  ], {
+    base: 'source',
+  })
+      .pipe(gulp.dest(`${folder}`));
+};
+
+const clean = () => {
+  return del(`${folder}`);
+};
+
+const syncServer = () => {
   server.init({
-    server: 'docs/',
+    server: `${folder}/`,
     notify: false,
     open: true,
     cors: true,
@@ -80,8 +135,13 @@ const syncserver = () => {
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series(css));
   gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
-  gulp.watch('source/img/**/*.svg', gulp.series(copysvg, sprite, pugToHtml, refresh));
-  gulp.watch('source/img/**/*.{png,jpg}', gulp.series(copypngjpg, pugToHtml, refresh));
+  gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, pugToHtml, refresh));
+  gulp.watch('source/img/**/*.{png,jpg,webp}', gulp.series(copyImages, pugToHtml, refresh));
+
+  gulp.watch('source/favicon/**', gulp.series(copy, refresh));
+  gulp.watch('source/video/**', gulp.series(copy, refresh));
+  gulp.watch('source/downloads/**', gulp.series(copy, refresh));
+  gulp.watch('source/*.php', gulp.series(copy, refresh));
 };
 
 const refresh = (done) => {
@@ -89,66 +149,11 @@ const refresh = (done) => {
   done();
 };
 
-const copysvg = () => {
-  return gulp.src('source/img/**/*.svg', {base: 'source'})
-      .pipe(gulp.dest('docs'));
-};
+const start = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, syncServer);
 
-const copypngjpg = () => {
-  return gulp.src('source/img/**/*.{png,jpg}', {base: 'source'})
-      .pipe(gulp.dest('docs'));
-};
+const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, optimizeImages);
 
-const copy = () => {
-  return gulp.src([
-    'source/fonts/**',
-    'source/favicon/**',
-    'source/img/**',
-    'source/data/**',
-    'source/file/**',
-    'source/*.php',
-    'source/video/**', // учтите, что иногда git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
-    'source/downloads/**',
-    'CNAME'
-  ], {
-    base: 'source',
-  })
-      .pipe(gulp.dest('docs'));
-};
-
-const copyCNAME = () => {
-  return gulp.src(['CNAME', 'yandex_*.html'])
-    .pipe(gulp.dest('docs'));
-};
-
-const clean = () => {
-  return del('docs');
-};
-
-const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, copyCNAME);
-
-const start = gulp.series(build, syncserver);
-
-// Optional tasks
-//---------------------------------
-// Вызывайте через 'npm run taskName'
-
-const createWebp = () => {
-  return gulp.src('source/img/**/*.{png,jpg}')
-      .pipe(webp({quality: 90}))
-      .pipe(gulp.dest('source/img'));
-};
-
-const optimizeImages = () => {
-  return gulp.src('docs/img/**/*.{png,jpg}')
-      .pipe(imagemin([
-        imagemin.optipng({optimizationLevel: 3}),
-        imagemin.mozjpeg({quality: 75, progressive: true}),
-      ]))
-      .pipe(gulp.dest('docs/img'));
-};
-
-exports.build = build;
-exports.start = start;
-exports.webp = createWebp;
 exports.imagemin = optimizeImages;
+exports.webp = createWebp;
+exports.start = start;
+exports.build = build;

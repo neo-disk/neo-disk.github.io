@@ -1,0 +1,48 @@
+.link {
+  font: inherit;
+  color: inherit;
+  transition: color opacity $trans-default;
+  transform: translateZ(0);
+
+  svg {
+    transform: translateZ(0);
+  }
+
+  &--underlined {
+    text-decoration: underline;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      transition: opacity $trans-default;
+      color: inherit;
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--limeade {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        transition: color $trans-default;
+        color: $color-limeade-second;
+      }
+    }
+  }
+
+  &--lima {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        transition: color $trans-default;
+        color: #71b32c;
+        font-weight: 600;
+      }
+    }
+  }
+}

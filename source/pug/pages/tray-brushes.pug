@@ -1,0 +1,98 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Щетка лотковая" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "tray-brushes" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const trayBrushesTitle = {
+      lvl: 2,
+      text: "Щетка лотковая",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const trayBrushesSubtitle = {
+      lvl: 3,
+      text: "Щетка лотковая предназначена для уборки прибордюрной территории дороги и других труднодоступных мест.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const trayBrushesImageParameters = {
+      path: "productPage/tray-brushes",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Лотковая щетка синего цвета",
+      classFir: "fir"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(trayBrushesImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(trayBrushesTitle)
+          +title(trayBrushesSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Материал основания
+              .box-description__right
+                p Лист ПНД толщиной 20-25 мм
+                p Влагостойкая фанера толщиной 20-25 мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Набивочный материал
+              .box-description__right
+                p Полипропиленовый ворс диаметром 2,3-2,5 мм различной длины;
+                p Стальная полоса (подкат) из пружинной стали шириной 3 мм. различной длины;
+                p Возможен вариант использования обоих типов набивочного материала в одном пучке (комбинированная набивка).
+            .box-description__item.fir.d-600
+              .box-description__left
+                //p Детали
+              //.box-description__right
+              //  p
+              //    strong Детали изготавливаются по индивидуальным размерам.
+
+
+
+
+      .grid__cell
+        +global-slider(trayBrushesSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+            .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+              +title(shopContentTextTitle)
+              p.fir.d-200
+              p.fir.d-300  Щетка лотковая имеет конусообразную форму, которая и позволяет использовать её для удаления мусора из лотка дороги.
+              p.fir.d-400  По конструкции щетки лотковой состоит из сплошного круглого основания, которое имеет несколько рядов отверстий для набивки ворса или подката.
+              p.fir.d-500  Основание щетки лотковой также может быть изготовлено в виде сегментов (секторов). С учётом диаметра, основание щетки лотковой может состоять из двух-пяти сегментов.
+              p.fir.d-600
+                strong Детали изготавливаются по индивидуальным размерам.
+              a(href="#").link.read-more.fir Читать больше
+
+
+
+    //-
+    //-
+
+block modals

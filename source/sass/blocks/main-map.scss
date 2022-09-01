@@ -1,0 +1,26 @@
+.main-map {
+  width: size(1201px);
+  height: size(545px);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include vp-1279 {
+    width: 100%;
+    height: 500px;
+  }
+
+  @include vp-1023 {
+    height: 400px;
+  }
+
+  @include vp-767 {
+    height: 350px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+}

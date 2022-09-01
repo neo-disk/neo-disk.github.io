@@ -1,126 +1,163 @@
 .header {
-  background-color: $color-white-smoke;
-}
+  width: 100%;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-default-white;
+  z-index: 1000;
+  transition: transform 1.2s;
 
-.header__wrapper {
-  position: relative;
-  z-index: 11;
-  display: flex;
-  // flex-wrap: wrap;
-  align-items: center;
-  padding: 29px 0;
-}
+  &__logo {
+    margin-top: 30px;
+    margin-left: -6px;
+    color: $color-default-white;
 
-.header__logo {
-  margin-left: 5px;
-  margin-right: 15px;
-}
+    @include vp-1279 {
+      margin-left: 32px;
+    }
 
-.header__main-nav {
-  flex-shrink: 1;
-  margin: 0 auto;
-}
+    @include vp-1023 {
+      margin-left: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
 
-.header__contacts {
-  flex-shrink: 0;
-  margin-top: 0;
-  margin-right: 2px;
-  margin-left: 15px;
-
-  @media (max-width: $viewport--md) {
-    width: 20%;
-
-    & > ul {
-      display: none;
+    @include vp-767 {
+      margin-top: 20px;
+      margin-bottom: 0;
     }
   }
-}
 
-.header__contacts-list {
-  display: flex;
-  margin: 0;
-  margin-right: -33px;
-  padding: 0;
-
-  list-style: none;
-}
-
-.header__contacts-item {
-  margin-right: 33px;
-}
-
-@media (max-width: 1060px) {
-  .header__logo {
+  @include vp-1279 {
+    left: 0;
     margin-left: 0;
   }
 
-  .header__contacts {
-    margin-right: -5px;
-    margin-left: 10px;
-  }
-
-  .header__contacts-list {
-    margin-right: -15px;
-  }
-
-  .header__contacts-item {
-    margin-right: 15px;
+  &--shadow {
+    box-shadow: 0 3px 5px 5px rgba($color-nero, 0.2);
   }
 }
 
-@media (max-width: 950px) {
-  .header__logo {
-    margin-left: -10px;
-    margin-right: 10px;
+.header__container {
+  display: flex;
+  width: size(1201px);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  padding: 0;
+
+  @include vp-1919 {
+    width: 1201px;
   }
 
-  .header__contacts-list {
-    flex-direction: column;
-    margin-bottom: -5px;
+  @include vp-1279 {
+    width: 100%;
   }
 
-  .header__contacts-item {
-    margin-bottom: 5px;
+  @include vp-1023 {
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include vp-767 {
+    width: 100vw;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
-@include viewport--sm {
-  .header__wrapper {
-    padding: 11px 0;
+.header__logo-text {
+  width: size(175px);
+  height: size(34px);
+  margin-left: -15px;
+  display: inline-block;
+  vertical-align: baseline;
+  transform: translateY(-10px);
+
+  @include vp-767 {
+    transform: translateY(-5px);
+  }
+}
+
+.header__logo-circle {
+  width: size(62px);
+  height: size(64px);
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__burger {
+  display: none;
+
+  @include vp-1023 {
+    display: inline;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: inherit;
+    z-index: 101;
   }
 
-  .header__main-nav {
-    order: -1;
-    margin: 0;
+  @include vp-767 {
+    margin-top: 5px;
   }
+}
 
-  .header__logo {
-    margin-left: 38.7%;
-  }
+.header__burger--closed {
+  @include vp-1023 {
+    position: relative;
 
-  .header__logo-svg {
-    width: 37px;
-    height: 23px;
-  }
-
-  .header__contacts {
-    display: block;
-    margin: 0;
-    margin-top: -7px;
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .header__contacts-list {
-    flex-direction: row;
-    margin-right: -14px;
-  }
-
-  .header__contacts-item {
-    margin-right: 14px;
-
-    &--phone {
-      order: -1;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 23px;
+      height: 1px;
+      top: 18px;
+      left: 14px;
+      background-color: $color-default-black;
+      box-shadow: 0 7px 0 0 $color-default-black, 0 14px 0 0 $color-default-black;
     }
+  }
+}
+
+.header__burger--opened {
+  @include vp-1023 {
+    position: fixed;
+    top: 30px;
+    right: 35px;
+    margin-top: 0;
+    animation: mobileMenuRotationOpen 3s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 1px;
+      left: 15px;
+      top: 18px;
+      background-color: $color-nero;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include vp-767 {
+    top: 4px;
+    right: 20px;
   }
 }

@@ -1,0 +1,90 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Щетка дисковая беспроставочная" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "spacerless-straight-profile-disc-brushes" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const spacerlessStraightProfileDiscBrushesTitle = {
+      lvl: 2,
+      text: "Щетка дисковая беспроставочная",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const spacerlessStraightProfileDiscBrushesSubtitle = {
+      lvl: 3,
+      text: "",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: false
+    }
+
+    const spacerlessStraightProfileDiscBrushesImageParameters = {
+      path: "productPage/spacerlessStraightProfileDiscBrushes",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1498",
+      alt: "Щётка зеленого цвета"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(spacerlessStraightProfileDiscBrushesImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(spacerlessStraightProfileDiscBrushesTitle)
+          +title(spacerlessStraightProfileDiscBrushesSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Внутренний диаметр сердечника
+              .box-description__right
+                p 78&nbsp;мм, 101&nbsp;мм, 110&nbsp;мм, 120&nbsp;мм, 130&nbsp;мм, 180&nbsp;мм, 254&nbsp;мм, 280&nbsp;мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Внешний диаметр ворса
+              .box-description__right
+                p 300 - 900 мм
+            .box-description__item.fir.d-600
+              .box-description__left
+                p Материал ворса и сердечника
+              .box-description__right
+                p
+                  strong Полипропилен
+                p
+                  i износостойкий, морозоустойчивый полипропиленовый ворс диаметром 2,3-2,5 мм.
+
+
+      .grid__cell
+        +global-slider(spacerlessStraightProfileDiscBrushesSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+            .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+              +title(shopContentTextTitle)
+              p.fir.d-200  Данный вид щетки полностью изготавливается из полипропилена. Полипропиленовый ворс диаметром 2,3-2,5 заливается в полипропиленовый сердечник. Тем самым исключается любая возможность выпадения ворса.
+              p.fir.d-300  Сердечник имеет три фиксирующих выступа (шпонки), которые обеспечивают полную совместимость щетки с валом и исключают прокручивание щетки на валу.
+              a(href="#").link.read-more.fir Читать больше
+
+
+
+    //-
+    //-
+
+block modals

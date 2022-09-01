@@ -1,51 +1,77 @@
-extends ../base/layout
-
-include ../mixins/basic/picture
-include ../components/product
-
-block data
-  -
-    const product = {
-      images: [
-        {
-          imageName: "spacer-rings",
-          imageWidth: "718",
-          imageHeight: "479",
-          imageAlt: "Проставочные кольца",
-        }
-      ],
-      title: "Проставочные кольца",
-      description: [
-        "Проставочные кольца требуются при использовании дисковых щеток с металлическим сердечником. Они помогают достичь необходимого расстояния между соседними щеточными дисками. Это расстояние позволяет, во-первых, обеспечивать нужный уровень густоты ворса, во вторых, не превышать максимальных весовых норм механизма. Комплект проставочных колец подбирается исходя из размера внутреннего диаметра используемых щеточных дисков."
-      ],
-      list: [
-        {
-          title: "Материал изготовления:",
-          elements: [
-            "Стальная полоса (лента) толщиной 1-1,2 мм."
-          ]
-        }
-      ],
-      details: [
-        {feature: "Диаметр кольца", value: "78 ММ, 101 ММ, 110 ММ, 117 ММ, 120 ММ, 127 ММ, 130 ММ, 164 ММ, 180 ММ, 203 ММ, 254 ММ, 280 ММ."},
-      ]
-    }
+extends ../components/base/layout
 
 block variables
-  - var title = "Проставочные кольца"
-  - var wrapperMod = ""
-  - var hasHeader = true
-  - var headerMod = ""
-  - var hasFooter = true
-  - var footerMod = ""
-  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+  - const title = "Проставочные кольца" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "spacer-rings" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const spacerRingsTitle = {
+      lvl: 2,
+      text: "Проставочные кольца",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const spacerRingsSubtitle = {
+      lvl: 3,
+      text: "",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: false
+    }
+
+    const spacerRingsImageParameters = {
+      path: "productPage/spacer-rings",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Проставочные кольца"
+    }
 
 block main
   main
-    section.product
-      .container.container--no-padding
-        +product(product)
+    h1.visually-hidden Тут вы найдете информацию о товаре
 
-block scripts
-  script(src="js/vendor.min.js")
-  script(src="js/main.min.js")
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(spacerRingsImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(spacerRingsTitle)
+          +title(spacerRingsSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Диаметр кольца
+              .box-description__right
+                p от 78 до 254 мм.
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал изготовления
+              .box-description__right
+                p Стальная полоса (лента) толщиной 1-1,2&nbsp;мм.
+
+
+
+      .grid__cell
+        +global-slider(spacerRingsSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Проставочные кольца требуются при использовании дисковых щеток с&nbsp;металлическим сердечником. Они помогают достичь необходимого расстояния между соседними щеточными дисками. Это расстояние позволяет, во-первых, обеспечивать нужный уровень густоты ворса, во&nbsp;вторых, не&nbsp;превышать максимальных весовых норм механизма. Комплект проставочных колец подбирается исходя из&nbsp;размера внутреннего диаметра используемых щеточных дисков.
+    //-
+    //-
+
+block modals

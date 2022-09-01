@@ -1,0 +1,58 @@
+.shop-content-text {
+  padding-bottom: size(60px);
+
+  .title--content-text {
+    margin: 0;
+    margin-top: size(-10px);
+    margin-bottom: size(28px);
+    font-size: size(30px);
+    line-height: size(32px);
+    font-weight: 400;
+    color: $color-limeade;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: size(16px);
+    font-size: size(18px);
+    line-height: size(22px);
+    max-width: size(585px);
+
+    @include vp-1023 {
+      min-width: 100%;
+    }
+
+    @include vp-767 {
+      &:not(:nth-child(2)) {
+        display: none;
+      }
+    }
+  }
+
+  &.show-more {
+    @include vp-767 {
+      p {
+        display: block;
+      }
+    }
+  }
+
+  @include vp-1439 {
+    padding-bottom: 0;
+  }
+}
+
+.read-more {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    color: $color-mantis;
+  }
+}

@@ -1,0 +1,41 @@
+mixin advantages-list()
+  -
+    var advantagesList = [
+      {
+        image: "first",
+        width: "73px",
+        height: "73px",
+        text: "высококачественное сырье"
+      },
+      {
+        image: "second",
+        width: "73px",
+        height: "73px",
+        text: "ответственный персонал"
+      },
+      {
+        image: "third",
+        width: "73px",
+        height: "73px",
+        text: "современное оборудование"
+      },
+      {
+        image: "fourth",
+        width: "73px",
+        height: "73px",
+        text: "проверенные технологии"
+      },
+      {
+        image: "fifth",
+        width: "73px",
+        height: "73px",
+        text: "эффективные методы управления"
+      },
+    ]
+
+  ul.advantages-list.fir
+    each advantage in advantagesList
+      li.advantages-list__item
+        .advantages-list__picture
+          +icon(advantage.image, advantage.width, advantage.height)
+        != advantage.text

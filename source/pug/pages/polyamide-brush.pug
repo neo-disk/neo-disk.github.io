@@ -1,51 +1,85 @@
-extends ../base/layout
-
-include ../mixins/basic/picture
-include ../components/product
-
-block data
-  -
-    const product = {
-      images: [
-        {
-          imageName: "polyamide-brush",
-          imageWidth: "718",
-          imageHeight: "675",
-          imageAlt: "Полиамидная щетка",
-        }
-      ],
-      title: "Полиамидная щетка",
-      description: [
-        "Полиамидная нить обладает такими свойствами как мягкость, эластичность и морозоустойчивость, что позволяет ей удалять загрязнения с дорожных ограждений и стен тоннелей, не повреждая конструктивные элементы, установленные на них."
-      ],
-      list: [
-        {
-          title: "Материал ворса",
-          elements: [
-            "Полиамидная нить."
-          ]
-        }
-      ],
-      details: [
-        {feature: "Внутренний диаметр кольца ", value: "78 мм, 101 мм, 110 мм, 117 мм, 120 мм, 127 мм, 130 мм, 164 мм, 180 мм, 203 мм, 254 мм, 280 мм."}
-      ]
-    }
+extends ../components/base/layout
 
 block variables
-  - var title = "Полиамидная щетка "
-  - var wrapperMod = ""
-  - var hasHeader = true
-  - var headerMod = ""
-  - var hasFooter = true
-  - var footerMod = ""
-  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+  - const title = "Полиамидная щетка" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "polyamide-brush" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const polyamideBrushTitle = {
+      lvl: 2,
+      text: "Полиамидная щетка",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const polyamideBrushSubtitle = {
+      lvl: 3,
+      text: "",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: false
+    }
+
+    const  polyamideBrushImageParameters = {
+      path: "productPage/polyamide-brush",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Полиамидная щетка синего цвета"
+    }
 
 block main
   main
-    section.product
-      .container.container--no-padding
-        +product(product)
+    h1.visually-hidden Тут вы найдете информацию о товаре
 
-block scripts
-  script(src="js/vendor.min.js")
-  script(src="js/main.min.js")
+    section.grid
+      .grid__cell.shop__image.shop.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(polyamideBrushImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(polyamideBrushTitle)
+          +title(polyamideBrushSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Внутренний диаметр ворса
+              .box-description__right
+                p от 78 до 254 мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Внешний диаметр
+              .box-description__right
+                p 300 до 900 мм
+            .box-description__item.fir.d-600
+              .box-description__left
+                p Материал ворса
+              .box-description__right
+                p Полиамидная нить
+
+
+
+      .grid__cell
+        +global-slider(polyamideSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Полиамидная нить обладает такими свойствами как мягкость, эластичность и&nbsp;морозоустойчивость, что позволяет ей&nbsp;удалять загрязнения с&nbsp;дорожных ограждений и&nbsp;стен тоннелей, не&nbsp;повреждая конструктивные элементы, установленные на&nbsp;них.
+
+
+
+    //-
+    //-
+
+block modals

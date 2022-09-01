@@ -1,0 +1,43 @@
+.advantages-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include vp-1023 {
+    padding: 0;
+  }
+}
+
+.advantages-list__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: size(10px);
+  text-transform: uppercase;
+  font-size: size(18px);
+  line-height: size(22px);
+  font-weight: 700;
+  max-width: size(450px);
+  letter-spacing: 0.1em;
+
+  @include vp-1023 {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.advantages-list__item svg {
+  width: size(73px);
+  height: size(73px);
+  margin-right: size(25px);
+  fill: transparent;
+
+  @include vp-1023 {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
+
+.advantages-list__picture {
+  flex-shrink: 0;
+}

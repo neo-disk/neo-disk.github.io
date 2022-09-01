@@ -1,0 +1,58 @@
+.video {
+  width: size(814px);
+  height: size(457px);
+  position: relative;
+
+  @include vp-1919 {
+    max-width: 814px;
+    height: 457px;
+  }
+
+  @include vp-1279 {
+    max-width: 68%;
+    width: 100%;
+  }
+
+  @include vp-1023 {
+    max-width: 100%;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.video__player {
+  opacity: 0;
+  width: 100%;
+  display: block;
+
+  @include vp-1279 {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.visible {
+  opacity: 1;
+}
+
+.video__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: size(80px);
+  height: size(80px);
+  margin: size(-40px) 0 0 size(-40px);
+  border: 10px solid $color-white-smoke;
+  border-radius: 50%;
+  border-top: 10px solid $color-nero;
+  border-bottom: 10px solid $color-nero;
+  animation: circleRotation 2s linear infinite;
+  z-index: 10;
+
+  &--hidden {
+    display: none;
+  }
+}

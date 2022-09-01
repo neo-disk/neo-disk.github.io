@@ -1,0 +1,92 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Тупса" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "tups" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const tupsTitle = {
+      lvl: 2,
+      text: "Тупса",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const tupsSubtitle = {
+      lvl: 3,
+      text: "Тупса является сменным элементом щетки лотковой. Используется в многоразовых щетках лотковых для увеличения срока её службы.",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: true
+    }
+
+    const tupsImageParameters = {
+      path: "productPage/tups",
+      image: "0",
+      format: "png",
+      width: "780",
+      height: "408",
+      alt: "Тупса черного цвета"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid.shop
+      .grid__cell.shop__image.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(tupsImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(tupsTitle)
+          +title(tupsSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Размер оголовка
+              .box-description__right
+                p 20x20 мм
+                p 47x17 мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал набивки
+              .box-description__right
+                p Полипропиленовый ворс диаметром 2,3-2,5 мм
+                p Стальная полоса (подкат) шириной 3 мм
+            .box-description__item.fir.d-600
+              .box-description__left
+                p Длина
+              .box-description__right
+                p 300-350&nbsp;мм.
+
+
+
+      .grid__cell
+        +global-slider(tupsSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+            .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+              +title(shopContentTextTitle)
+              p.fir.d-200  По конструкции тупса состоит из набивочного материала, прочно обжатого в профиль стального типа (оголовок).
+              p.fir.d-300  Тупса, изготовленная из подката,  отличается повышенной износоустойчивостью.
+              p.fir.d-400  Используется в основном для сбора обледеневшей грязи по краям дороги,  у тротуаров, бордюров, где применение щёточного оснащения прочих видов малоэффективно, либо невозможно.
+              p.fir.d-500  Тупса с ворсом из полипропилена с лёгкостью справляется со сбором мусора и пыли.
+              a(href="#").link.read-more.fir Читать больше
+
+
+
+    //-
+    //-
+
+block modals

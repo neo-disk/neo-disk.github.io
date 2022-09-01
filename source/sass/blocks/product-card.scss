@@ -1,0 +1,97 @@
+.product-card {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      .product-card__wrapper {
+        transition: transform $trans-default;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+.product-card__wrapper {
+  width: size(249px);
+  height: size(249px);
+  border-radius: 50%;
+  background-color: $color-matterhorn;
+  box-shadow: 0 0 10px 5px rgba($color-default-black, 0.45);
+  position: relative;
+  transition: transform $trans-default;
+
+  @include vp-1023 {
+    margin-left: 30px;
+  }
+
+  @include vp-899 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.product-card__wrapper img {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  z-index: 1;
+  max-width: size(400px);
+
+  @media (min-width: 2500px) {
+    width: 100%;
+    height: auto;
+  }
+
+  @include vp-1279 {
+    left: 0;
+    width: 250px;
+    height: auto;
+  }
+
+  @include vp-374 {
+    max-width: 250px;
+    top: 20px;
+  }
+}
+
+.products__item:first-of-type img {
+  @include vp-1023 {
+    top: 50px;
+  }
+}
+
+.products__item:nth-of-type(2) img {
+  @include vp-1023 {
+    top: 50px;
+  }
+}
+
+.product-card__text {
+  background-color: $color-night-rider;
+  width: size(219px);
+  height: size(94px);
+  display: flex;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 1px;
+  font-weight: 700;
+  font-size: size(19px);
+  line-height: size(21px);
+  color: $color-default-white;
+  margin-top: size(-115px);
+  margin-left: size(112px);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform $trans-default;
+
+  @include vp-1023 {
+    margin-left: 50px;
+    margin-top: -60px;
+  }
+
+  @include vp-899 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,12 @@
+-
+  const linkDefaultParameters = {
+    href: "#",
+    title: "Осмысленная подсказка к ссылке",
+    text: "Ссылка на что-то"
+  }
+
+mixin link(linkProps= linkDefaultParameters)
+  if (linkProps.title)
+    a.link(class!=attributes.class, href= linkProps.href, title= linkProps.title, aria-label= linkProps.title, target=linkProps.target, rel=linkProps.rel)= linkProps.text
+  else
+    a.link(class!=attributes.class, href= linkProps.href, target=linkProps.target, rel=linkProps.rel)= linkProps.text

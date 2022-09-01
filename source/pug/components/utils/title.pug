@@ -1,0 +1,23 @@
+-
+  const titleDefaultParameters = {
+    lvl: 2,
+    text: "Заголовок второго уровня",
+    classes: "",
+    isTitleNeed: true
+  };
+mixin title(titleProps= titleDefaultParameters)
+  if titleProps.isTitleNeed || titleProps.isTitleNeed === undefined
+    //- *** Модификатор на уровень заголовка ***
+    - const titleLvlMod = "h" + titleProps.lvl;
+
+    case titleProps.classes
+      when "visually-hidden"
+        #{"h" + titleProps.lvl}.visually-hidden!= titleProps.text
+
+      when ""
+      when undefined
+      when null
+        #{"h" + titleProps.lvl}.title!= titleProps.text
+
+      default
+        #{"h" + titleProps.lvl}.title(class= titleProps.classes)!= titleProps.text

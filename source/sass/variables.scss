@@ -1,60 +1,85 @@
 // Colors
-//---------------------------------
-// https://www.htmlcsscolor.com/hex/334482
+// ---------------------------------
 
 // Default
 
-$color-default-black:             #000000;
-$color-default-white:             #ffffff;
-$color-transparent:               rgba(255, 255, 255, 0);
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
 
-// Base
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
-$color-shadow:                    rgba(0, 0, 0, 0.25);
-$color-overlay:                   rgba(0, 0, 0, 0.24);
-$color-partners-border:           rgba(0, 0, 0, 0.13);
-$color-black:                     #0e0e0e;
-$color-white:                     #f2f2f2;
-$color-blue:                      #2c39f2;
-$color-fern-green:                #4f8439;
-$color-eclipse:                   #383838;
-$color-comet:                     #5f5f62;
+$color-mantis:                      #88bd4d;
+$color-limeade:                     #54a433;
+$color-olivine:                     #9fca70;
+$color-white-smoke:                 #f1f1f1;
+$color-gray:                        #808080;
+$color-gin:                         #d6e6c0;
+$color-saltpan:                     #e7f0da;
+$color-lima:                        #71b42c;
+$color-ottoman:                     #d4e5bd;
+$color-matterhorn:                  #4c4c4c;
+$color-matterhorn-shade:            #4d4d4d;
+$color-dim-gray:                    #666666;
+$color-mantis:                      #8ebf56;
+$color-nero:                        #1a1a1a;
+$color-night-rider:                 #333333;
+$color-pink-swan:                   #b2b2b2;
+$color-pixie-green:                 #c0d9a0;
+$color-chicaho:                     #5b5f57;
+$color-limeade-second:              #53a433;
 
-$color-whisper:                   #e5e5e5;
-$color-eclipse:                   #383838;
-$color-white-smoke:               #f4f4f4;
-$color-night-rider:               #333333;
-$color-zambezi:                   #5f5959;
-$color-myrtle:                    #185908;
-$color-wild-willow:               #b3d56d;
-$color-dim-gray:                  #6b6565;
 
 // Gradient
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$green-to-left:                     linear-gradient(to right, #8cbf53, #d4e5bd);
+$green-to-top:                      linear-gradient(to top, $color-saltpan, $color-default-white);
+$green-to-top-second:               linear-gradient(to top, $color-mantis, #d8e7c4);
+$mantis-to-top:                     linear-gradient(180deg, rgba(216, 230, 197, 1) 0%, rgba(137, 189, 79, 1) 50%);
+$frostee-to-top:                    linear-gradient(to top, rgba($color-default-white, 0.6) 70%, rgba(220, 234, 202, 0.6) 100%);
+$green-to-right:                    linear-gradient(to right, $color-pixie-green 0%, $color-default-white 20%, $color-default-white 100%);
+
 
 // Typography
-//---------------------------------
+// ---------------------------------
 
-$font-family-proximanova:                     "Proxima Nova", "Arial", sans-serif;
+// переменная используемая в html для подключения скейлинга
+$fz-default:                        16px;
+
+
+//------------------------------------
+$ff-rouble:                         "Rouble", "Arial", sans-serif;
+$ff-promiximaNova:                  "Proxima Nova", "Arial", sans-serif;
+
 
 // Animation
-//---------------------------------
+// ---------------------------------
 
-$default-transition-settings:       0.3s ease;
-$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$tf-default:                        ease;
+$trans-default:                     0.3s $tf-default;
+
+// если требуется изинг отличный от $tf-default, то переменную называем не цифрой
+$trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+$trans-600:                         0.6s $tf-default;
 
 // Viewports
-//---------------------------------
+// ---------------------------------
 
-$viewport--sm:                      320px;
-$viewport--md:                      768px;
-$viewport--lg:                      1024px;
-$viewport--xl:                      1440px;
-$viewport--xxl:                     1920px;
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-450:                            450px;
+$vp-768:                            768px;
+$vp-900:                            900px;
+$vp-1024:                           1024px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1920:                           1920px;
 
 // Retina
-//---------------------------------
+// ---------------------------------
 
 $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;

@@ -1,0 +1,112 @@
+-
+  const socialsTitleParameters = {
+    lvl: 2,
+    text: "Наши контакты",
+    classes: "title--main",
+    isTitleNeed: true
+  };
+-
+  const firstTitleParameters = {
+    lvl: 3,
+    text: "Отдел снабжения",
+    classes: "title--socials-h3",
+    isTitleNeed: true
+  };
+-
+  const secondTitleParameters = {
+    lvl: 3,
+    text: "Отдел продаж",
+    classes: "title--socials-h3",
+    isTitleNeed: true
+  };
+-
+  const thirdTitleParameters = {
+    lvl: 3,
+    text: "Юридический адрес",
+    classes: "title--socials-h3",
+    isTitleNeed: true
+  };
+-
+  const fourthTitleParameters = {
+    lvl: 3,
+    text: "График работы",
+    classes: "title--socials-h3",
+    isTitleNeed: true
+  };
+-
+  const fifthTitleParameters = {
+    lvl: 3,
+    text: "Правовая информация",
+    classes: "title--socials-h3",
+    isTitleNeed: true
+  };
+
+mixin socials
+  section.socials
+    .container.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+      +title(socialsTitleParameters)
+      .socials__wrapper
+        .socials__info-box.fir
+          +title(firstTitleParameters)
+          a(href="tel:89067315326").bold.socials__info-phone
+            .socials__info-icon
+              +icon("icon-phone-additional", 25, 25)
+            | 8 906 731 53 26
+          a(href="mailto:zakupki@neo-disk.ru")
+            .socials__info-icon
+              +icon("icon-mail-additional", 19, 19)
+            p
+              span.bold zakupki
+              | @neo-disk.ru
+        .socials__info-box.fir
+          +title(secondTitleParameters)
+          a(href="tel:89067315326").bold.socials__info-phone
+            .socials__info-icon
+              +icon("icon-phone-additional", 25, 25)
+            | 8 906 731 53 26
+          a(href="mailto:sales@neo-disk.ru")
+            .socials__info-icon
+              +icon("icon-mail-additional", 19, 19)
+            p
+              span.bold sales
+              | @neo-disk.ru
+        .socials__info-box.fir
+          +title(thirdTitleParameters)
+          .socials__info-wrapper
+            .socials__info-icon
+              +icon("icon-marker", 19, 19)
+            .socials__info-text
+              p
+                span Московская область,<br>
+                span г.о. Солнечногорск,<br>
+                span.bold.socials__info-adress дп Поварово, ул. Почтовая, д. 29
+        .socials__info-box.fir
+          +title(fourthTitleParameters)
+          .socials__info-wrapper
+            .socials__info-icon
+              +icon("icon-schedule", 19, 19)
+            .socials__info-text
+              p
+                span.bold пн-пт:
+                |  8
+                sup 00
+                | — 17
+                sup 00 <br>
+                span.bold сб-вc:
+                |  выходной
+        .socials__info-box.fir
+          +title(fifthTitleParameters)
+          .socials__info-wrapper
+            .socials__info-icon
+              +icon("icon-info", 19, 19)
+            .socials__info-text
+              p.socials__additional-box
+                span.socials__info-neo.bold
+                  | ООО «НЕО ДИСК»
+                span.socials__info-span ОГРН&ensp;1195081022520
+                span.socials__info-span ИНН&emsp;5044115110
+                span.socials__info-span КПП&emsp;504401001
+                span.socials__info-span.socials__info-span--italic (от 2 апреля 2019 г.)
+        .socials__info-box.fir
+          +icon("logo-circle", "95px", "95px").socials__logo.logo
+          +icon("logo-text-additional", "180px", "36px").socials__text-svg

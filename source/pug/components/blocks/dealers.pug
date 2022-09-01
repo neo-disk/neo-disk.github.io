@@ -1,0 +1,17 @@
+mixin dealers
+  .dealers.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+      .dealers__list
+        +dealers-list()
+      .dealers__map
+        .dealers__map-header
+          h3.h3.pseudo.pseudo--info.fir  Контакты
+          .dealers__image-wrapper
+            img(src="img/content/dealers/logo-contur.png" width="254" height="70" alt="Логотип компании" aria-hidden="true").fir
+          .dealers__contact-wrapper.fir
+            .dealers__contact.dealers__contact--phone
+              +icon("icon-phone-dark", "17px", "17px")
+              +link(phone)
+            .dealers__contact.dealers__contact--mail
+              +icon("icon-mail-dark", "17px", "17px")
+              +link(mail)
+        +ymap()

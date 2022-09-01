@@ -1,0 +1,143 @@
+.additional-nav {
+  display: flex;
+  height: 100%;
+  width: 20.15vw;
+  padding-bottom: size(27px);
+  background: $green-to-top;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 31px;
+    top: 45px;
+    left: -1px;
+    background: $green-to-top-second;
+  }
+
+  @include vp-1919 {
+    max-width: size(387px);
+    width: 387px;
+  }
+
+  @include vp-1439 {
+    width: 387px;
+  }
+
+  @include vp-1279 {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  @media (max-width: 1150px) {
+    max-width: 380px;
+  }
+
+  @media (max-width: 1090px) {
+    max-width: 350px;
+  }
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.additional-nav__text {
+  display: inline-flex;
+  align-items: center;
+  font-size: size(19px);
+  line-height: size(24px);
+  padding-top: size(30px);
+  margin: 0;
+  margin-left: size(58px);
+
+  @include vp-1919 {
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    margin: 0;
+    margin-left: 58px;
+    margin-right: 10px;
+    padding-top: 30px;
+  }
+
+  @include vp-1279 {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}
+
+.additional-nav__inner {
+  display: flex;
+  flex-direction: column;
+  margin-left: size(20px);
+  margin-top: size(35px);
+  color: $color-lima;
+  font-weight: 600;
+
+  @include vp-1919 {
+    margin-left: 20px;
+    margin-top: 38px;
+  }
+
+  @include vp-1279 {
+    margin-left: 10px;
+  }
+}
+
+.additional-nav__link {
+  font-size: size(15px);
+  letter-spacing: 0.05em;
+
+  @include vp-1919 {
+    font-size: 15px;
+  }
+}
+
+.additional-nav__link svg {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.additional-nav__inner p {
+  padding: 0;
+  margin: 0;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover svg,
+    &:focus svg {
+      opacity: 0.7;
+    }
+  }
+
+  &:active svg {
+    opacity: 0.5;
+  }
+}
+
+.additional-nav svg {
+  display: inline-flex;
+  align-self: center;
+}
+
+.additional-nav__text svg {
+  width: size(30px);
+  height: size(31px);
+  margin-right: 10px;
+
+  @include vp-1919 {
+    width: 30px;
+    height: 31px;
+  }
+}
+
+.additional-nav__inner svg {
+  width: size(16px);
+  height: size(16px);
+
+  @include vp-1919 {
+    width: 16px;
+    height: 16px;
+  }
+}

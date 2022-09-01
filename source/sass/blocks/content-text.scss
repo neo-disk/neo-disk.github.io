@@ -1,0 +1,9 @@
+.content-text {
+  font-size: size(18px);
+  line-height: size(22px);
+  max-width: size(585px);
+
+  @include vp-1023 {
+    min-width: 100%;
+  }
+}
