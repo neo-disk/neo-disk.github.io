@@ -22,9 +22,9 @@ block variables
 
     const steelRollSubtitle = {
       lvl: 3,
-      text: "Изготавливается из высокоуглеродистой пружинной стали. Применяется для набивки лотковых щеток и изготовления сменных тупс для коммунальной уборочной техники.",
+      text: "",
       classes: "title--h3 pseudo pseudo--info fir",
-      isTitleNeed: true
+      isTitleNeed: false
     }
 
     const  steelRollImageParameters = {
@@ -66,6 +66,12 @@ block main
 
       .grid__cell
         +global-slider(steelRollSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Изготавливается из высокоуглеродистой пружинной стали. Применяется для набивки лотковых щеток и изготовления сменных тупс для коммунальной уборочной техники.
+
 
 
 

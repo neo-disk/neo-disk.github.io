@@ -22,9 +22,9 @@ block variables
 
     const spacerRingsSubtitle = {
       lvl: 3,
-      text: "Проставочные кольца требуются при использовании дисковых щеток с&nbsp;металлическим сердечником. Они помогают достичь необходимого расстояния между соседними щеточными дисками. Это расстояние позволяет, во-первых, обеспечивать нужный уровень густоты ворса, во&nbsp;вторых, не&nbsp;превышать максимальных весовых норм механизма. Комплект проставочных колец подбирается исходя из&nbsp;размера внутреннего диаметра используемых щеточных дисков.",
+      text: "",
       classes: "title--h3 pseudo pseudo--info fir",
-      isTitleNeed: true
+      isTitleNeed: false
     }
 
     const spacerRingsImageParameters = {
@@ -67,7 +67,10 @@ block main
       .grid__cell
         +global-slider(spacerRingsSliderData)
 
-
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Проставочные кольца требуются при использовании дисковых щеток с&nbsp;металлическим сердечником. Они помогают достичь необходимого расстояния между соседними щеточными дисками. Это расстояние позволяет, во-первых, обеспечивать нужный уровень густоты ворса, во&nbsp;вторых, не&nbsp;превышать максимальных весовых норм механизма. Комплект проставочных колец подбирается исходя из&nbsp;размера внутреннего диаметра используемых щеточных дисков.
     //-
     //-
 
