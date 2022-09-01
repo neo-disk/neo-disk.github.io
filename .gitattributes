@@ -1,8 +1,8 @@
 * text eol=lf
-
-*.png binary
-*.jpg binary
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg binary
-*.webp binary
+*.webp filter=lfs diff=lfs merge=lfs -text
 *.woff binary
 *.woff2 binary
+*.mp4 filter=lfs diff=lfs merge=lfs -text
