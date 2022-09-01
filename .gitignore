@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 .vscode
-package-lock.json
 *.ai
 *.log
 *.psd
@@ -12,3 +11,4 @@ source/css/*.css
 source/css/*.map
 Thumbs.db
 dev_build
+build
