@@ -1,0 +1,14 @@
+mixin price-table(data)
+    - count = 0;
+    table(
+        border="1",
+        class="price-table"
+        )
+        each row in data
+            tr
+                each column in row
+                    - if (count == 0)
+                        th #{column}
+                    - else
+                        td #{column}
+                - count += 1;

@@ -1,0 +1,18 @@
+.price-table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  width:100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.price-table tbody {
+  display: table;
+  width: 100%;
+  text-align: left;
+}
+
+.price-table th, td {
+  padding: 0 10px;
+}
