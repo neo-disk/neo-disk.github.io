@@ -214,6 +214,12 @@
   }
 }
 
+.divider {
+ height: .8em;
+ box-shadow: 0 2px 2px -1px $color-lima;
+ margin-bottom: .8em;
+}
+
 .main-nav__catalog-link {
   display: inline-block;
   width: max-content;
