@@ -12,13 +12,28 @@ block variables
   - const sliderNavigationNeeded = true
   - const currentPage = "price-list" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
+  -
+    const backgroundImage = {
+      path: "price-list-background",
+      image: "price-list-background",
+      format: "jpg",
+      width: "100%",
+      height: "300",
+      alt: "Третий слайд"
+    }
+
 block main
   main
     h1.visually-hidden Прайс-лист на товары
 
+    div.price-list
+      .container.image-wrapper
+        +picture(backgroundImage.path, backgroundImage.image, backgroundImage.format, backgroundImage.width, backgroundImage.height, backgroundImage.alt)
+
 
     section.price-list
       .container.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+
         h2 Прайс-лист на товары
 
         +price-table(segmetsPriceListData)

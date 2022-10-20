@@ -1,7 +1,5 @@
 .price-list .container {
   width: size(1201px);
-  padding-left: size(100px);
-  padding-right: size(100px);
   padding-top: 1px;
   padding-bottom: size(50px);
   color: #666666;
@@ -11,26 +9,26 @@
     width: 1201px;
   }
 
-  @include vp-1439 {
-    padding-left: 32px;
-  }
-
   @include vp-1279 {
     width: 100%;
   }
 
   @include vp-1023 {
     width: 100vw;
-    padding-left: 24px;
-  }
-
-  @include vp-767 {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 
 .price-list h2 {
   font-size: 44px;
   text-align: center;
+}
+
+.image-wrapper {
+  padding: 0;
+  width: 100%;
+  height: size(300px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
