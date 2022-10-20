@@ -1,0 +1,91 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Мулаг" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const contactsNeeded = true
+  - const sliderPaginationNeeded = true
+  - const sliderNavigationNeeded = true
+  - const currentPage = "mulag" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+  -
+    const mulagTitle = {
+      lvl: 2,
+      text: "Мулаг",
+      classes: "title--h2 pseudo pseudo--line fir",
+      isTitleNeed: true
+    }
+
+    const mulagSubtitle = {
+      lvl: 3,
+      text: "",
+      classes: "title--h3 pseudo pseudo--info fir",
+      isTitleNeed: false
+    }
+
+    const  mulagImageParameters = {
+      path: "productPage/mulag",
+      image: "0",
+      format: "png",
+      width: "1500",
+      height: "1500",
+      alt: "Мулаг"
+    }
+
+block main
+  main
+    h1.visually-hidden Тут вы найдете информацию о товаре
+
+    section.grid
+      .grid__cell.shop__image.shop.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        +shop-image(mulagImageParameters)
+
+      .grid__cell.grid__cell--bg.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner.shop__content.fir
+          +title(mulagTitle)
+          +title(mulagSubtitle)
+
+          .box-description
+            h3.box-description__title.fir Детали:
+            .box-description__item.fir.d-200
+              .box-description__left
+                p Размеры основания
+              .box-description__right
+                p 300х310 мм
+            .box-description__item.fir.d-400
+              .box-description__left
+                p Материал основания
+              .box-description__right
+                p Полиуретан
+            .box-description__item.fir.d-600
+              .box-description__left
+                p Материал ворса
+              .box-description__right
+                p Полиамидная нить сечением 0,45 мм
+            .box-description__item.fir.d-800
+              .box-description__left
+                p Крепежное отверстие
+              .box-description__right
+                p 8 шт
+
+
+
+
+      .grid__cell
+        +global-slider(mulagSliderData)
+
+      .grid__cell.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+        .grid__cell-inner
+          .shop-content-text.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
+            p Щетка используется для мойки поверхностей стен транспортных тоннелей, остановочных павильонов, пешеходных переходов и путепроводов. Полиамидная нить обладает такими свойствами как мягкость, эластичность и морозоустойчивость, что позволяет ей не повреждать конструктивные элементы ограждений и тоннелей и т.д
+
+
+
+    //-
+    //-
+
+block modals
