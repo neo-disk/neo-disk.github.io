@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Прайс лист на товары" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Прайс-лист на товары" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -14,12 +14,12 @@ block variables
 
 block main
   main
-    h1.visually-hidden Прайс лист на товары
+    h1.visually-hidden Прайс-лист на товары
 
 
     section.price-list
       .container.animation-group(data-animate, data-animate-threshold="1.1", data-animate-duration="1.1", data-animate-delay="0.2")
-        h2 Прайс лист на товары
+        h2 Прайс-лист на товары
 
         +price-table(segmetsPriceListData)
 
