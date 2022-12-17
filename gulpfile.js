@@ -17,7 +17,7 @@ const pug = require('gulp-pug');
 const cached = require('gulp-cached');
 const gcmq = require('gulp-group-css-media-queries');
 
-const folder = process.env.NODE_ENV === 'production' ? 'build' : 'dev_build';
+const folder = process.env.NODE_ENV === 'production' ? 'docs' : 'dev_build';
 
 const pugToHtml = () => {
   return gulp.src('source/pug/pages/*.pug')
@@ -118,6 +118,13 @@ const copy = () => {
       .pipe(gulp.dest(`${folder}`));
 };
 
+const copyCNAME = () => {
+  return gulp.src('CNAME', {
+    base: '',
+  })
+      .pipe(gulp.dest(`${folder}`));
+};
+
 const clean = () => {
   return del(`${folder}`);
 };
@@ -151,7 +158,7 @@ const refresh = (done) => {
 
 const start = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, syncServer);
 
-const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml, optimizeImages);
+const build = gulp.series(clean, svgo, copy, copyCNAME, css, sprite, js, pugToHtml, optimizeImages);
 
 exports.imagemin = optimizeImages;
 exports.webp = createWebp;
