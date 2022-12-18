@@ -142,7 +142,7 @@ const copy = () => {
     'source/favicons/**',
     'source/video/**',
     'source/downloads/**',
-    'source/*.php',
+    'source/files/**',
   ], {
     base: 'source',
   })
@@ -179,7 +179,7 @@ const syncServer = () => {
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
   gulp.watch('source/video/**', gulp.series(copy, refresh));
   gulp.watch('source/downloads/**', gulp.series(copy, refresh));
-  gulp.watch('source/*.php', gulp.series(copy, refresh));
+  gulp.watch('source/files/**', gulp.series(copy, refresh));
 };
 
 const refresh = (done) => {
