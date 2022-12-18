@@ -4,7 +4,7 @@ mixin global-slider(data)
       .global-slider__wrapper.swiper-wrapper
         each picture in data
           .global-slider__slide.swiper-slide
-            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt)
+            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt, picture.loading)
 
       if (sliderPaginationNeeded)
         .swiper-pagination.swiper-pagination-new
@@ -17,7 +17,7 @@ mixin global-slider(data)
       .main-swiper__wrapper.swiper-wrapper
         each picture in data
           .main-swiper__slide.swiper-slide
-            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt)
+            +picture(picture.path, picture.image, picture.format, picture.width, picture.height, picture.alt, picture.loading)
             .main-swiper__shadow
       .main-swiper__pagination
 

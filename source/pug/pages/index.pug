@@ -21,4 +21,8 @@ block main
     +main-map()
 
 block modals
-  script(src="https://api-maps.yandex.ru/2.1/?apikey=8ae345f3-fa1c-4989-abc6-3d883df83c02&lang=ru_RU" rel="noopener")
+  script(
+    src="https://api-maps.yandex.ru/2.1/?apikey=8ae345f3-fa1c-4989-abc6-3d883df83c02&lang=ru_RU"
+    rel="noopener"
+    defer=true
+    )

@@ -1,4 +1,4 @@
-mixin picture(path, image, format, width, height, altText)
+mixin picture(path, image, format, width, height, altText, loading)
   picture(class!=attributes.class)
     source(
       media="(max-width: 200px)",
@@ -22,4 +22,6 @@ mixin picture(path, image, format, width, height, altText)
       srcset= "img/" + path + "/" + image + "@2x." + format + " 2x",
       width= width,
       height= height,
-      alt= altText).fir
+      alt= altText,
+      loading= loading || "lazy"
+      ).fir
