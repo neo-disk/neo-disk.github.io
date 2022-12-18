@@ -3,6 +3,9 @@ const initMainSlider = () => {
 
   // eslint-disable-next-line no-unused-vars
   const swiper = new window.Swiper(slider, {
+    autoplay: {
+      delay: 3000,
+    },
     slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
