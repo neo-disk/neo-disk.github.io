@@ -1,15 +1,3 @@
--
-  const videoProperties = {
-    link: "link",
-    width: "witdh",
-    height: "height",
-    type: "video type",
-    mute: "удалить строку, если нужен звук",
-    poster: "link"
-  }
-
-mixin video(videoProperties)
-  .video
-    video(width= width, height= height, loop, autoplay, muted=videoProperties.mute, poster=videoProperties.poster).video__player
-      source(src=videoProperties.link, type=videoProperties.type)
+mixin video()
+  .video-container
     .video__loader

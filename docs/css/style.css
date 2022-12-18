@@ -2295,7 +2295,7 @@ button,
   margin: 0;
 }
 
-.video {
+.video-container {
   width: 50.875rem;
   height: 28.5625rem;
   position: relative;
@@ -3925,7 +3925,7 @@ td {
     height: 16px;
   }
 
-  .video {
+  .video-container {
     max-width: 814px;
     height: 457px;
   }
@@ -4071,7 +4071,7 @@ td {
     margin-left: 10px;
   }
 
-  .video {
+  .video-container {
     max-width: 68%;
     width: 100%;
   }
@@ -4529,7 +4529,7 @@ td {
     display: none;
   }
 
-  .video {
+  .video-container {
     max-width: 100%;
   }
 
@@ -4956,7 +4956,7 @@ td {
     padding-bottom: 40px;
   }
 
-  .video {
+  .video-container {
     display: none;
   }
 
