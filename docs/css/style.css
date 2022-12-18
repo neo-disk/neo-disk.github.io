@@ -2511,7 +2511,7 @@ button,
 }
 
 .products .container {
-  background: url("../img/background-main.png") no-repeat;
+  background: url("../img/background-main.webp") no-repeat;
   background-position: center center;
   padding-bottom: 124px;
   width: 75.0625rem;

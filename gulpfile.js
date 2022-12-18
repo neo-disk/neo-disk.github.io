@@ -213,9 +213,6 @@ const build = gulp.series(
     pugToHtml
 );
 
-exports.sprite = sprite
-exports.svgo = svgo
-exports.ri = generateResponsiveImages
 exports.imagemin = optimizeImages;
 exports.start = start;
 exports.build = build;
