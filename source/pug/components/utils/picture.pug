@@ -1,6 +1,25 @@
 mixin picture(path, image, format, width, height, altText)
   picture(class!=attributes.class)
-    source(media="(max-width: 767px)", type='image/webp', srcset="img/" + path + "/" + image + "-mobile" + ".webp" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x.webp" + " 2x")
-    source(media="(max-width: 767px)", srcset="img/" + path + "/" + image + "-mobile" + "." + format + " 1x" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x" + "." + format + " 2x"                   )
-    source(type='image/webp', srcset="img/" + path + "/" + image + ".webp" + ", " + "img/" + path + "/" + image + "@2x.webp" + " 2x")
-    img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText).fir
+    source(
+      media="(max-width: 449px)",
+      type='image/webp',
+      srcset="img/" + path + "/" + image + "-mobile" + ".webp" + ", " + "img/" + path + "/" + image + "-mobile" + ".webp")
+    source(
+      media="(max-width: 449px)",
+      srcset="img/" + path + "/" + image + "-mobile" + "." + format + " 1x" + ", " + "img/" + path + "/" + image + "-mobile" + "." + format + " 1x")
+    source(
+      media="(max-width: 767px)",
+      type='image/webp',
+      srcset="img/" + path + "/" + image + "-mobile" + ".webp" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x.webp" + " 2x")
+    source(
+      media="(max-width: 767px)",
+      srcset="img/" + path + "/" + image + "-mobile" + "." + format + " 1x" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x" + "." + format + " 2x")
+    source(
+      type='image/webp',
+      srcset="img/" + path + "/" + image + ".webp" + ", " + "img/" + path + "/" + image + "@2x.webp" + " 2x")
+    img(
+      src="img/" + path + "/" + image + "." + format,
+      srcset= "img/" + path + "/" + image + "@2x." + format + " 2x",
+      width= width,
+      height= height,
+      alt= altText).fir
