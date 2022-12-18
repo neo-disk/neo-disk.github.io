@@ -46,15 +46,9 @@ mixin header(headerMods, currentPage)
 
   header.header(class=headerMods)
     .container.header__container
-      if(currentPage === "index")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo
-          +icon("logo-circle", "62px", "64px").header__logo-circle.logo
-          +icon("logo-text", "180px", "36px").header__logo-text
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную")
-          +icon("logo-circle", "62px", "64px").header__logo-circle.logo
-          +icon("logo-text", "180px", "36px").header__logo-text
+      a.header__logo(href="index.html", aria-label="Переход на главную")
+        +icon("logo-circle", "62px", "64px").header__logo-circle.logo
+        +icon("logo-text", "180px", "36px").header__logo-text
       nav.main-nav
         .main-nav__wrapper
           ul.main-nav__list
