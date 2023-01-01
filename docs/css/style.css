@@ -2321,14 +2321,14 @@ button,
   top: 50%;
   width: 5rem;
   height: 5rem;
-  margin: -2.5rem 0 0 -2.5rem;
-  border: 10px solid #f1f1f1;
-  border-radius: 50%;
-  border-top: 10px solid #1a1a1a;
-  border-bottom: 10px solid #1a1a1a;
-  -webkit-animation: circleRotation 2s linear infinite;
-  animation: circleRotation 2s linear infinite;
-  z-index: 10;
+  /*margin: -2.5rem 0 0 -2.5rem;*/
+  /*border: 10px solid #f1f1f1;*/
+  /*border-radius: 50%;*/
+  /*border-top: 10px solid #1a1a1a;*/
+  /*border-bottom: 10px solid #1a1a1a;*/
+  /*-webkit-animation: circleRotation 2s linear infinite;*/
+  /*animation: circleRotation 2s linear infinite;*/
+  /*z-index: 10;*/
 }
 
 .video__loader--hidden {

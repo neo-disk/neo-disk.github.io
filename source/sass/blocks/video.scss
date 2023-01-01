@@ -20,6 +20,8 @@
   @include vp-767 {
     display: none;
   }
+
+  background-color: $color-nero;
 }
 
 .video__player {
@@ -42,14 +44,14 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: size(80px);
-  height: size(80px);
+  width: size(180px);
+  height: size(180px);
   margin: size(-40px) 0 0 size(-40px);
-  border: 10px solid $color-white-smoke;
-  border-radius: 50%;
-  border-top: 10px solid $color-nero;
-  border-bottom: 10px solid $color-nero;
-  animation: circleRotation 2s linear infinite;
+  //border: 10px solid $color-gin;
+  //border-radius: 50%;
+  //border-top: 10px solid $color-olivine;
+  //border-bottom: 10px solid $color-olivine;
+  //animation: circleRotation 2s linear infinite;
   z-index: 10;
 
   &--hidden {

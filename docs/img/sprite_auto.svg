@@ -1072,7 +1072,7 @@
     transform-origin: center center;
   }
   }
-    @keyframes circleRotationTwo {
+  @keyframes circleRotationTwo {
     from {
       transform: rotate(0deg);
       transform-origin: center center;
@@ -1081,7 +1081,7 @@
     to {
       transform: rotate(-720deg);
       transform-origin: center center;
-  }
+   }
   }
 
   #main-circle {
@@ -1089,7 +1089,7 @@
   }
   #circles {
     animation: circleRotationTwo 15s linear infinite;
-    opacity: 0;
+    opacity: 1;
   }
 </style>
 </symbol><symbol id="logo-text-additional" viewBox="0 0 157 39">

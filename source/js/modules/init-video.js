@@ -11,7 +11,7 @@ function renderVideoElement(containerElement) {
 
   videoEl.width = neoDiskVideoProperties.width;
   videoEl.height = neoDiskVideoProperties.height;
-  // videoEl.poster= neoDiskVideoProperties.poster
+  videoEl.poster= neoDiskVideoProperties.poster
   videoEl.loop = true
   videoEl.autoplay = true
   videoEl.muted = true
