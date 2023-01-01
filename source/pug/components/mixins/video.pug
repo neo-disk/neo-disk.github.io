@@ -1,3 +1,6 @@
 mixin video()
   .video-container
-    .video__loader
+    .video__loader.video__loader--hidden
+    .video__overlay.hidden
+      +icon("speaker-wave", "18px", "18px").speaker.on
+      +icon("speaker-x-mark", "18px", "18px").speaker.off.hidden

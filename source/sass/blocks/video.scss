@@ -56,3 +56,25 @@
     display: none;
   }
 }
+
+.video__overlay {
+  //height: 100%;
+  //width: 100%;
+  position: absolute;
+  z-index: 2;
+
+  &.hidden {
+    display: none;
+  }
+
+  & .speaker {
+    margin: 8px;
+    stroke: $color-ottoman;
+    fill: $color-lima;
+    cursor: pointer;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}

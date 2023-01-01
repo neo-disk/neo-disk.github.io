@@ -1,5 +1,5 @@
 const neoDiskVideoProperties = {
-  src: "video/video-main.mp4",
+  src: "video/neo-disk.mp4",
   width: "814",
   height: "457",
   type: "video/mp4",
@@ -9,34 +9,58 @@ const neoDiskVideoProperties = {
 function renderVideoElement(containerElement) {
   const videoEl = document.createElement('video');
 
+  videoEl.width = neoDiskVideoProperties.width;
+  videoEl.height = neoDiskVideoProperties.height;
+  // videoEl.poster= neoDiskVideoProperties.poster
+  videoEl.loop = true
+  videoEl.autoplay = true
+  videoEl.muted = true
+  videoEl.playsinline = true;
+  videoEl.controls = true;
+  videoEl.className = 'video__player';
+
   videoEl.onloadeddata = () => {
     const loader = document.querySelector('.video__loader');
-
     function showVideo() {
       loader.classList.add('video__loader--hidden');
       videoEl.classList.add('visible');
     }
 
-    showVideo()
+    showVideo();
   }
-  videoEl.width = neoDiskVideoProperties.width
-  videoEl.height = neoDiskVideoProperties.height
-  videoEl.muted = neoDiskVideoProperties.mute
-  // videoEl.poster= neoDiskVideoProperties.poster
-  videoEl.loop = true
-  videoEl.autoplay = true
 
-  videoEl.className = 'video__player'
-
-
-  containerElement.appendChild(videoEl)
+  containerElement.appendChild(videoEl);
 
   const sourceEl = document.createElement('source');
 
-  sourceEl.type = neoDiskVideoProperties.type
-  sourceEl.src = neoDiskVideoProperties.src
+  sourceEl.type = neoDiskVideoProperties.type;
+  sourceEl.src = neoDiskVideoProperties.src;
 
-  videoEl.appendChild(sourceEl)
+  videoEl.appendChild(sourceEl);
+
+  // function showOverlay() {
+  //   const overlay = document.querySelector('.video__overlay');
+  //   overlay.classList.remove('hidden')
+  //
+  //   const turnSoundOnEl = overlay.querySelector('.on');
+  //   const turnSoundOffEl = overlay.querySelector('.off');
+  //
+  //   turnSoundOnEl.onclick = () => {
+  //     // videoEl.removeAttribute("muted");
+  //     videoEl.setAttribute('muted', false);
+  //     turnSoundOnEl.classList.add('hidden')
+  //     turnSoundOffEl.classList.remove('hidden')
+  //   }
+  //
+  //   turnSoundOffEl.onclick = () => {
+  //     // videoEl.removeAttribute("muted");
+  //     videoEl.setAttribute('muted', true);
+  //     turnSoundOffEl.classList.add('hidden');
+  //     turnSoundOnEl.classList.remove('hidden');
+  //   }
+  // }
+  //
+  // showOverlay();
 }
 
 function loadVideo() {
