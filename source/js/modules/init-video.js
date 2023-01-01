@@ -1,5 +1,5 @@
 const neoDiskVideoProperties = {
-  src: "video/neo-disk.mp4",
+  src: "video/video-main.mp4",
   width: "814",
   height: "457",
   type: "video/mp4",
@@ -11,7 +11,7 @@ function renderVideoElement(containerElement) {
 
   videoEl.width = neoDiskVideoProperties.width;
   videoEl.height = neoDiskVideoProperties.height;
-  videoEl.poster= neoDiskVideoProperties.poster
+  // videoEl.poster= neoDiskVideoProperties.poster
   videoEl.loop = true
   videoEl.autoplay = true
   videoEl.muted = true
@@ -37,30 +37,6 @@ function renderVideoElement(containerElement) {
   sourceEl.src = neoDiskVideoProperties.src;
 
   videoEl.appendChild(sourceEl);
-
-  // function showOverlay() {
-  //   const overlay = document.querySelector('.video__overlay');
-  //   overlay.classList.remove('hidden')
-  //
-  //   const turnSoundOnEl = overlay.querySelector('.on');
-  //   const turnSoundOffEl = overlay.querySelector('.off');
-  //
-  //   turnSoundOnEl.onclick = () => {
-  //     // videoEl.removeAttribute("muted");
-  //     videoEl.setAttribute('muted', false);
-  //     turnSoundOnEl.classList.add('hidden')
-  //     turnSoundOffEl.classList.remove('hidden')
-  //   }
-  //
-  //   turnSoundOffEl.onclick = () => {
-  //     // videoEl.removeAttribute("muted");
-  //     videoEl.setAttribute('muted', true);
-  //     turnSoundOffEl.classList.add('hidden');
-  //     turnSoundOnEl.classList.remove('hidden');
-  //   }
-  // }
-  //
-  // showOverlay();
 }
 
 function loadVideo() {
