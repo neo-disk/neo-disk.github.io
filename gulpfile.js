@@ -156,6 +156,13 @@ const copyCNAME = () => {
       .pipe(gulp.dest(`${outputFolder}`));
 };
 
+const copyYandexVerificationFile = () => {
+  return gulp.src('yandex_9f86d2912df42f84.html', {
+    base: '',
+  })
+      .pipe(gulp.dest(`${outputFolder}`));
+};
+
 const clean = () => {
   return del(`${outputFolder}`);
 };
@@ -207,6 +214,7 @@ const build = gulp.series(
     generateResponsiveImages,
     createWebp,
     copyCNAME,
+    copyYandexVerificationFile,
     css,
     sprite,
     js,
